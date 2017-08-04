@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2017 at 03:43 PM
+-- Generation Time: Aug 02, 2017 at 08:12 PM
 -- Server version: 10.1.22-MariaDB
--- PHP Version: 7.1.4
+-- PHP Version: 7.0.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -50,17 +50,6 @@ CREATE TABLE `auth_item` (
   `updated_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `auth_item`
---
-
-INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES
-('/*', 2, NULL, NULL, NULL, 1501834593, 1501834593),
-('/admin/assignment/index', 2, NULL, NULL, NULL, 1501762064, 1501762064),
-('/admin/rule/*', 2, NULL, NULL, NULL, 1501762202, 1501762202),
-('/admin/user/*', 2, NULL, NULL, NULL, 1501749622, 1501749622),
-('admin', 1, 'admin', NULL, NULL, 1501762126, 1501762126);
-
 -- --------------------------------------------------------
 
 --
@@ -71,13 +60,6 @@ CREATE TABLE `auth_item_child` (
   `parent` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `child` varchar(64) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `auth_item_child`
---
-
-INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
-('admin', '/*');
 
 -- --------------------------------------------------------
 
@@ -106,13 +88,6 @@ CREATE TABLE `menu` (
   `order` int(11) DEFAULT NULL,
   `data` blob
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `menu`
---
-
-INSERT INTO `menu` (`id`, `name`, `parent`, `route`, `order`, `data`) VALUES
-(3, 'admin', NULL, '/admin/assignment/index', 1, 0x3132);
 
 -- --------------------------------------------------------
 
@@ -160,18 +135,6 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'mukulrathi', 'V0pz_zPZ5qa0aoCH-5CJk1GtucPZLTnF', '$2y$13$TtNh9yqEfTV08lsZro1Wm.EdHGlsiv5WHX4tZfVoh.VKO669qGFWy', NULL, 'mukulrathi8@gmail.com', 10, 1501693005, 1501693005);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_profile`
---
-
-CREATE TABLE `user_profile` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `first_name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -227,13 +190,6 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `password_reset_token` (`password_reset_token`);
 
 --
--- Indexes for table `user_profile`
---
-ALTER TABLE `user_profile`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -241,17 +197,12 @@ ALTER TABLE `user_profile`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `user_profile`
---
-ALTER TABLE `user_profile`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
@@ -280,12 +231,6 @@ ALTER TABLE `auth_item_child`
 --
 ALTER TABLE `menu`
   ADD CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `menu` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `user_profile`
---
-ALTER TABLE `user_profile`
-  ADD CONSTRAINT `user_profile_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

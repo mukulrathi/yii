@@ -12,22 +12,26 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
-    'admin' => [
-            'class' => 'mdm\admin\Module',
-            'mainLayout' => '@app/views/layouts/main.php',
-            'layout' => 'left-menu', // it can be '@path/to/your/layout'.
-            'controllerMap' => [
-                'assignment' => [
-                    'class' => 'mdm\admin\controllers\AssignmentController',
-                    'userClassName' => 'common\models\User',
-                    'idField' => 'user_id'
+        'admin' => [
+                'class' => 'mdm\admin\Module',
+                'mainLayout' => '@app/views/layouts/main.php',
+                'layout' => 'left-menu', // it can be '@path/to/your/layout'.
+                'controllerMap' => [
+                    'assignment' => [
+                        'class' => 'mdm\admin\controllers\AssignmentController',
+                        'userClassName' => 'common\models\User',
+                        'idField' => 'user_id'
+                    ],
                 ],
+                'menus' => [
+                    'user' => null
+                ]
             ],
-            'menus' => [
-                'user' => null
-            ]
-        ],
-        ],
+             'user' => [
+                'class' => 'backend\modules\user\Module',
+            ],
+        
+    ],
           'homeUrl' => '/admin',
     'components' => [
         'request' => [
@@ -73,6 +77,7 @@ return [
         ],
         
     ],
+
     // 'authManager'  => [
     //         'class'        => 'yii\rbac\DbManager',
     //         'defaultRoles' => ['guest'],
