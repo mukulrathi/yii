@@ -18,6 +18,7 @@ use common\models\User as BaseUser;
  * @property integer $updated_at
  *
  * @property UserProfile[] $userProfiles
+ 	* @property UserShop[] $userShops
  */
 class User extends BaseUser
 {
@@ -35,8 +36,15 @@ class User extends BaseUser
     public function rules()
     {
         return [
-            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+            [['username', 'email'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
+            ['email','email'],
+          //   [['password_hash'], 'required', 'when' => function($model) {
+          //      return $model->isNewRecord;
+          //  }, 'whenClient' => 'function(attribute, value) {
+          //      return $("#user-id").length == 0;
+          //  }'],
+
             [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique'],
@@ -70,4 +78,11 @@ class User extends BaseUser
     {
         return $this->hasMany(UserProfile::className(), ['user_id' => 'id']);
     }
+    /**
+    * @return \yii\db\ActiveQuery
+    */
+   public function getUserShops()
+   {
+       return $this->hasMany(UserShop::className(), ['user_id' => 'id']);
+   }
 }

@@ -7,9 +7,14 @@ use Yii;
 /**
  * This is the model class for table "user_profile".
  *
- * @property string $id
  * @property integer $user_id
  * @property string $first_name
+ * @property string $last_name
+ * @property integer $mobile
+ * @property string $address
+ * @property string $state
+ * @property string $city
+ * @property string $landmark
  *
  * @property User $user
  */
@@ -29,9 +34,9 @@ class UserProfile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id'], 'required'],
-            [['user_id'], 'integer'],
-            [['first_name'], 'string', 'max' => 255],
+            [['first_name', 'last_name', 'mobile', 'address', 'state', 'city', 'landmark'], 'required'],
+            [['user_id', 'mobile'], 'integer'],
+            [['first_name', 'last_name', 'address', 'state', 'city', 'landmark'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
@@ -42,9 +47,14 @@ class UserProfile extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
             'user_id' => 'User ID',
             'first_name' => 'First Name',
+            'last_name' => 'Last Name',
+            'mobile' => 'Mobile',
+            'address' => 'Address',
+            'state' => 'State',
+            'city' => 'City',
+            'landmark' => 'Landmark',
         ];
     }
 

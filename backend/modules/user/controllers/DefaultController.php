@@ -1,9 +1,11 @@
 <?php
 
 namespace backend\modules\user\controllers;
-
 use Yii;
 use backend\modules\user\models\User;
+use  backend\modules\user\models\UserProfile;
+use  backend\modules\user\models\UserShop;
+use  backend\modules\user\models\UserShopAddress;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -64,14 +66,69 @@ class DefaultController extends Controller
     public function actionCreate()
     {
         $model = new User();
+        $modelUserProfile = new UserProfile();
+        $modelUserShop   = new UserShop();
+        $modelUserShopAddress = new UserShopAddress();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+        if ($model->load(Yii::$app->request->post()) &&
+            $modelUserProfile->load(Yii::$app->request->post())&&
+            $modelUserShop->load(Yii::$app->request->post()) &&
+             $modelUserShopAddress->load(Yii::$app->request->post()))
+              {
+              $valid = $model->validate();
+              $valid = $valid && $modelUserProfile->validate();
+              $valid = $valid && $modelUserShop->validate();
+                $valid = $valid &&  $modelUserShopAddress->validate();
+               if($valid)
+               {
+
+                 $transaction = Yii::$app->db->beginTransaction();
+                 try{
+                // $model->setPassword($model->password_hash);
+                   if($flag = $model->save(false))
+                   {
+
+                     $modelUserProfile->user_id = $model->id;
+                     $modelUserShop->user_id   = $model->id;
+                     $modelUserShop->save(false);
+                     $modelUserShopAddress->shop_id = $modelUserShop->id;
+
+                     $flag = ($modelUserProfile->save(false) && $modelUserShopAddress->save(false));
+
+
+                   }
+                   if($flag)
+                   {
+                     $transaction->commit();
+                    Yii::$app->session->setFlash('success', 'User created successfully');
+                    return $this->redirect(['view', 'id' => $model->id]);
+
+                   }
+                 }
+                 catch (\Exception $exception) {
+          //        print_r($exception->getMessage())   ;exit('12');
+                    Yii::$app->session->setFlash('error', 'Unable to create user.');
+                    $transaction->rollBack();
+                    }
+
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+            print_r($modelUserShopAddress->errors);
+        //    Yii::$app->session->setFlash('error', 'Error during User Request');
+
+
+            }else {
+                return $this->render('create', [
+                    'model' => $model,
+                    'modelUserProfile' => $modelUserProfile,
+                    'modelUserShop'   =>   $modelUserShop,
+                    'modelUserShopAddress' =>$modelUserShopAddress,
+
+
+                ]);
+            }
+
+
     }
 
     /**
