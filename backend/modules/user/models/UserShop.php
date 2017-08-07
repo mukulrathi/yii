@@ -23,6 +23,8 @@ class UserShop extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public $shop_image;
+
     public static function tableName()
     {
         return 'user_shop';

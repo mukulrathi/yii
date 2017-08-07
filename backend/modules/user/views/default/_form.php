@@ -20,14 +20,7 @@ use backend\modules\user\models\UserShopCategory;
    <div class="col-sm-4">
      <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
    </div>
-
-   // Usage with ActiveForm and model
-  <?php echo $form->field($model, 'email')->widget(FileInput::classname(), [
-       'options' => ['accept' => 'image/*'],
-   ]);
-?>
-
-   </div>
+  </div>
    <div class="row">
     <div class="col-sm-4">
       <?= $form->field($modelUserProfile, 'first_name')->textInput(['maxlength' => true]) ?>
@@ -76,10 +69,31 @@ use backend\modules\user\models\UserShopCategory;
       <div class ="col-sm-4">
          <?= $form->field($modelUserShopAddress, 'postal_code')->textInput(['maxlength' => true]) ?>
        </div>
+       <div class ="col-sm-4">
+         <?= $form->field($modelUserShop, 'shop_image[]')->widget(FileInput::classname(), [
+        'options' => [
+            'multiple' => true,
+            'accept' => 'image/*'
+        ],
+        'pluginOptions' => [
+            //'initialPreview' => $file_urls,
+            'initialPreviewAsData' => true,
+            'uploadExtraData' => [
+                'initialPreviewAsData' => true,
+                'removeClass' => 'btn btn-default rm-file-input',
+            ],
+            'maxFileCount' => 4,
+            'browseOnZoneClick' => true,
+            'showBrowse' => true,
+            'allowedFileExtensions'=>['jpg', 'png', 'jpeg']
+        ]
+    ])->label('Shop Image'); ?>
+
+        </div>
+
      <div class="col-sm-4">
        <?php $usershopcategory =  UserShopCategory::find()->where(['status'=>1])->all();
          $category = yii\helpers\ArrayHelper::map($usershopcategory,'id','category_name');
-      //   print_r($usershopcategory); exit('12a');
         ?>
      <?= $form->field($modelUserShop, 'shop_category_id')->dropdownList($category,['prompt'=>'Select the shop category']); ?>
 

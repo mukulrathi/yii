@@ -3,13 +3,16 @@
 namespace backend\modules\user\controllers;
 use Yii;
 use backend\modules\user\models\User;
-use  backend\modules\user\models\UserProfile;
-use  backend\modules\user\models\UserShop;
-use  backend\modules\user\models\UserShopAddress;
+use backend\modules\user\models\UserProfile;
+use backend\modules\user\models\UserShop;
+use backend\modules\user\models\UserShopAddress;
+use backend\modules\user\models\UserShopFileMapping;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+
 
 /**
  * DefaultController implements the CRUD actions for User model.
@@ -69,6 +72,9 @@ class DefaultController extends Controller
         $modelUserProfile = new UserProfile();
         $modelUserShop   = new UserShop();
         $modelUserShopAddress = new UserShopAddress();
+        $modelShopFile = new UserShopFileMapping();
+        $file_urls = [];
+
 
         if ($model->load(Yii::$app->request->post()) &&
             $modelUserProfile->load(Yii::$app->request->post())&&
@@ -79,12 +85,12 @@ class DefaultController extends Controller
               $valid = $valid && $modelUserProfile->validate();
               $valid = $valid && $modelUserShop->validate();
                 $valid = $valid &&  $modelUserShopAddress->validate();
+                $modelShopFile->gallery = UploadedFile::getInstances($modelUserShop, 'shop_image');
                if($valid)
                {
 
                  $transaction = Yii::$app->db->beginTransaction();
                  try{
-                // $model->setPassword($model->password_hash);
                    if($flag = $model->save(false))
                    {
 
@@ -92,10 +98,8 @@ class DefaultController extends Controller
                      $modelUserShop->user_id   = $model->id;
                      $modelUserShop->save(false);
                      $modelUserShopAddress->shop_id = $modelUserShop->id;
-
-                     $flag = ($modelUserProfile->save(false) && $modelUserShopAddress->save(false));
-
-
+                     $modelShopFile->upload($modelUserShop);
+                    $flag = ($modelUserProfile->save(false) && $modelUserShopAddress->save(false));
                    }
                    if($flag)
                    {
@@ -106,7 +110,7 @@ class DefaultController extends Controller
                    }
                  }
                  catch (\Exception $exception) {
-          //        print_r($exception->getMessage())   ;exit('12');
+                  print_r($exception->getMessage())   ;exit('12');
                     Yii::$app->session->setFlash('error', 'Unable to create user.');
                     $transaction->rollBack();
                     }
