@@ -90,7 +90,10 @@ class DefaultController extends Controller
                {
 
                  $transaction = Yii::$app->db->beginTransaction();
+                $model->setPassword($model->password);
+                $model->generateAuthKey();
                  try{
+                  
                    if($flag = $model->save(false))
                    {
 

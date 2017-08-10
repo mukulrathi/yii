@@ -22,6 +22,7 @@ use common\models\User as BaseUser;
  */
 class User extends BaseUser
 {
+    public $password ;
     /**
      * @inheritdoc
      */
@@ -50,6 +51,8 @@ class User extends BaseUser
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
+            ['password', 'required'],
+            ['password', 'string', 'min' => 6],
         ];
     }
 

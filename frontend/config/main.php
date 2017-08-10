@@ -21,18 +21,15 @@ return [
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
-           'request' => [
-            'baseUrl' => '/admin',
-            'csrfParam' => '_csrf-backend',
-        ],
+
         'session' => [
             // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
         ],
-        // 'request' => [
-        //     'baseUrl' => $baseUrl,
-        //     'csrfParam' => '_csrf-frontend',
-        // ],
+         'request' => [
+             'baseUrl' => $baseUrl,
+             'csrfParam' => '_csrf-frontend',
+         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -55,5 +52,6 @@ return [
         ],
         
     ],
+
     'params' => $params,
 ];

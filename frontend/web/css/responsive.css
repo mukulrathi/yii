@@ -1,0 +1,1514 @@
+@media screen and (min-width: 1701px) and (max-width: 1799px) {
+    ul.navigation li {
+        width: 11%;
+    }
+}
+@media screen and (min-width: 1501px) and (max-width: 1700px) {
+    ul.navigation li {
+        width: 12%;
+    }
+    .navigation li a,
+    .telephone a {
+        color: #fff;
+        font-size: 13px;
+    }
+
+    ul.navigation li a img,
+    .telephone a figure img {
+        width: 13px;
+        height: auto;
+    }
+
+    .filter {
+        font-size: 14px;
+    }
+
+    .shop-title h3 {
+        font-size: 17px;
+        margin-bottom: 2%;
+    }
+
+    .read-info a {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+
+    .shop-info .price {
+        font-size: 16px;
+    }
+
+    .shop-info h2 {
+        font-size: 16px;
+    }
+
+    .shop-title h4 {
+        font-size: 13px;
+        margin-bottom: 17px;
+    }
+
+    .col-md-3.main-shop-side {
+        max-width: 19.9%;
+    }
+
+    .main-shop-side {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-bottom: 2%;
+    }
+
+    .pagination {
+        margin-left: 38%;
+        margin-top: 4% !important;
+    }
+    .pagination>li>a,
+    .pagination>li>span {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    .slider-content-image {
+        width: 100%;
+        height: 395px !important;
+    }
+    .slider-content h1 {
+        font-size: 3em;
+        margin-top: 11%;
+        margin-bottom: 4%;
+    }
+    .slider-content p {
+        font-size: 14px;
+    }
+
+    .item img {
+        height: 290px !important;
+        }
+
+    .caption h4 {
+        font-size: 15px;
+    }
+    .caption p {
+        color: #999;
+        font-size: 12px;
+    }
+    .btn {
+        padding: 0.46875rem 0rem !important;
+        font-size: 12px !important;
+    }
+    .selectCF .titleCF {
+        padding: 0 10px 0 20px;
+        font-size: 14px;
+    }
+    .selectCF {
+        margin: 0 6px;
+        padding: 0 0px;
+        width: 25%;
+        border: 1px solid #ccc;
+    }
+    .selectCF span {
+        height: 38px;
+        line-height: 38px;
+    }
+    .filter {
+        position: relative;
+        line-height: 39px;
+        height: 39px;
+        bottom: 13px;
+    }
+
+    .slider-container {
+        height: 474px;
+        }
+
+
+    /*details page*/
+
+
+    .shop-indetail-info h2, .mapsection h2 {
+     font-size: 33px;
+      }
+
+      .about-shop ul li span {
+          font-size: 14px;
+          }
+
+          #map{
+          height: 391px;
+          margin-bottom: 3%;
+          margin-top: 2%;
+          }
+
+          address h4, .contact-details h4, .mail-info h4 {
+            font-size: 22px;
+            }
+
+           address h5, .contact-details h5, .mail-info h5 {
+              font-size: 14px;
+              line-height: 1.5em;
+                }
+
+
+             /*footer   */
+
+             .footer-1 h2 {
+                   font-size: 20px;
+                        }
+
+             .footer-1 h3 {
+               font-size: 14px;   
+               }
+
+               .contact-footer2 ul li{
+                font-size: 13px;
+               }    
+
+                   .social-icons li {
+                         padding: 5px 12px;
+                                }
+
+                  .contact-footer input {
+                                    display: block;
+                                    padding: 13px 14px 1px;
+                                    /* font-size: 12px; */
+                                    width: 80%;
+                                    } 
+
+ .contact-footer input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 13px;
+}
+.contact-footer input::-moz-placeholder { /* Firefox 19+ */
+  font-size: 13px;
+}
+.contact-footer input:-ms-input-placeholder { /* IE 10+ */
+  font-size: 13px;
+}
+.contact-footer input:-moz-placeholder { /* Firefox 18- */
+  font-size: 13px;
+} 
+
+.subfooter {
+padding: 0.8% 3% 0.5%;
+}     
+
+.submit-form {
+width: 30% !important;
+padding: 7px 20px !important;
+font-size: 15px;
+}
+
+}
+@media screen and (min-width: 1366px) and (max-width: 1500px) {
+    ul.navigation li {
+        width: 12%;
+    }
+    .navigation li a,
+    .telephone a {
+        color: #fff;
+        font-size: 13px;
+    }
+    ul.navigation li a img,
+    .telephone a figure img {
+        width: 13px;
+        height: auto;
+    }
+    .filter {
+        font-size: 14px;
+    }
+    .shop-title h3 {
+        font-size: 17px;
+        margin-bottom: 2%;
+    }
+
+    .item img {
+        height: 250px !important;
+        }
+
+    .read-info a {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+    .shop-info .price {
+        font-size: 16px;
+    }
+    .shop-info h2 {
+        font-size: 16px;
+    }
+    .shop-title h4 {
+        font-size: 13px;
+        margin-bottom: 17px;
+    }
+    .col-md-3.main-shop-side {
+        max-width: 24.9%;
+    }
+    .main-shop-side {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-bottom: 2%;
+    }
+    .pagination {
+        margin-left: 38%;
+        margin-top: 4% !important;
+    }
+    .pagination>li>a,
+    .pagination>li>span {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    .slider-content-image {
+        width: 100%;
+        height: 365px !important;
+    }
+    .slider-content h1 {
+        font-size: 3em;
+        margin-top: 11%;
+        margin-bottom: 4%;
+    }
+    .slider-content p {
+        font-size: 14px;
+    }
+    .caption h4 {
+        font-size: 15px;
+    }
+    .caption p {
+        color: #999;
+        font-size: 12px;
+    }
+    .btn {
+        padding: 0.46875rem 0rem !important;
+        font-size: 12px !important;
+    }
+    .selectCF .titleCF {
+        padding: 0 10px 0 20px;
+        font-size: 14px;
+    }
+    .selectCF {
+        margin: 0 6px;
+        padding: 0 0px;
+        width: 25%;
+        border: 1px solid #ccc;
+    }
+    .selectCF span {
+        height: 38px;
+        line-height: 38px;
+    }
+    .filter {
+        position: relative;
+        line-height: 39px;
+        height: 39px;
+        bottom: 13px;
+    }
+
+    .slider-container {
+        height: 434px;
+        }
+
+
+    /*details page*/
+
+
+    .shop-indetail-info h2, .mapsection h2 {
+     font-size: 33px;
+      }
+
+    .about-shop ul li span {
+          font-size: 14px;
+          }
+
+    #map{
+          height: 391px;
+          margin-bottom: 3%;
+          margin-top: 2%;
+          }
+
+    address h4, .contact-details h4, .mail-info h4 {
+            font-size: 22px;
+            }
+
+    address h5, .contact-details h5, .mail-info h5 {
+              font-size: 14px;
+              line-height: 1.5em;
+                }
+
+    .shop-entry-detail {
+                    padding-top: 13%;
+                    }
+
+
+ /*footer   */
+
+             .footer-1 h2 {
+                   font-size: 20px;
+                        }
+
+           .footer-1 h3 {
+               font-size: 14px;   
+               }
+
+           .contact-footer2 ul li{
+                    font-size: 13px;
+                   }    
+
+          .social-icons li {
+                padding: 5px 12px;
+                            }
+
+          .contact-footer input {
+                  display: block;
+                  padding: 13px 14px 1px;
+                  /* font-size: 12px; */
+                 width: 80%;
+                         } 
+
+            .contact-footer input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                  font-size: 13px;
+                }
+                .contact-footer input::-moz-placeholder { /* Firefox 19+ */
+                  font-size: 13px;
+                }
+                .contact-footer input:-ms-input-placeholder { /* IE 10+ */
+                  font-size: 13px;
+                }
+                .contact-footer input:-moz-placeholder { /* Firefox 18- */
+                  font-size: 13px;
+                } 
+
+                .subfooter {
+                padding: 0.8% 3% 0.5%;
+                }     
+
+                .submit-form {
+                width: 30% !important;
+                padding: 7px 20px !important;
+                font-size: 15px;
+                }
+
+
+
+}
+@media screen and (min-width: 1024px) and (max-width: 1365px) {
+    ul.navigation li {
+        width: 15%;
+    }
+    .search-icon {
+        width: 19%;
+    }
+    .searchicon img {
+        width: 18px;
+    }
+    .navigation-arrows {
+        width: 14%;
+    }
+    .slider-content {
+        max-width: 787px;
+    }
+    .heading {
+        padding-bottom: 2%;
+    }
+    .col-sm-2.thumb-gallery {
+        max-width: 33%;
+        margin-bottom: 2%;
+    }
+    .last-nav li:last-child {
+        width: 48%;
+    }
+    .navigation li a,
+    .telephone a {
+        color: #fff;
+        font-size: 13px;
+    }
+    ul.navigation li a img,
+    .telephone a figure img {
+        width: 13px;
+        height: auto;
+    }
+    .filter {
+        font-size: 14px;
+    }
+
+    .item img {
+        height: 240px !important;
+        }
+
+    .shop-title h3 {
+        font-size: 17px;
+        margin-bottom: 2%;
+    }
+    .read-info a {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+    .shop-info .price {
+        font-size: 16px;
+    }
+    .shop-info h2 {
+        font-size: 16px;
+    }
+    .shop-title h4 {
+        font-size: 13px;
+        margin-bottom: 17px;
+    }
+    .col-md-3.main-shop-side {
+        max-width: 24.9%;
+    }
+    .main-shop-side {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-bottom: 2%;
+    }
+    .pagination {
+        margin-left: 38%;
+        margin-top: 4% !important;
+    }
+    .pagination>li>a,
+    .pagination>li>span {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    .slider-content-image {
+        width: 100%;
+        height: 335px !important;
+    }
+    .slider-content h1 {
+        font-size: 3em;
+        margin-top: 11%;
+        margin-bottom: 4%;
+    }
+    .slider-content p {
+        font-size: 14px;
+    }
+    .caption h4 {
+        font-size: 15px;
+    }
+    .caption p {
+        color: #999;
+        font-size: 12px;
+    }
+    .btn {
+        padding: 0.46875rem 0rem !important;
+        font-size: 12px !important;
+    }
+    .selectCF .titleCF {
+        padding: 0 10px 0 20px;
+        font-size: 14px;
+    }
+    .selectCF {
+        margin: 0 6px;
+        padding: 0 0px;
+        width: 25%;
+        border: 1px solid #ccc;
+    }
+    .selectCF span {
+        height: 38px;
+        line-height: 38px;
+    }
+    .filter {
+        position: relative;
+        line-height: 39px;
+        height: 39px;
+        bottom: 13px;
+    }
+
+     .slider-container {
+        height: 404px;
+        }
+    
+    /*details page*/
+
+
+    .shop-indetail-info h2, .mapsection h2 {
+     font-size: 28px;
+      }
+
+      .about-shop ul li span {
+          font-size: 14px;
+          }
+
+          #map{
+          height: 341px;
+          margin-bottom: 3%;
+          margin-top: 2%;
+          }
+
+          address h4, .contact-details h4, .mail-info h4 {
+            font-size: 20px;
+            }
+
+           address h5, .contact-details h5, .mail-info h5 {
+              font-size: 14px;
+              line-height: 1.5em;
+                }
+
+                .shop-entry-detail {
+                    padding-top: 14%;
+                    }
+
+                .shop-entry-detail h1 {
+                  font-size: 34px;
+                  }   
+
+                   .add-new-item img {
+                      height: 309px !important;
+                    }
+
+                    .home-round {
+                        left: 40%;
+                        }
+
+                        .contact-info1 {
+                          padding: 15% 10%;
+                          }
+
+ /*footer   */
+
+             .footer-1 h2 {
+                   font-size: 20px;
+                        }
+
+             .footer-1 h3 {
+               font-size: 14px;   
+               }
+
+               .contact-footer2 ul li{
+                font-size: 13px;
+               }    
+
+                   .social-icons li {
+                         padding: 5px 12px;
+                                }
+
+                  .contact-footer input {
+                                    display: block;
+                                    padding: 13px 14px 1px;
+                                    /* font-size: 12px; */
+                                    width: 85%;
+                                    } 
+
+            .contact-footer input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 13px;
+}
+.contact-footer input::-moz-placeholder { /* Firefox 19+ */
+  font-size: 13px;
+}
+.contact-footer input:-ms-input-placeholder { /* IE 10+ */
+  font-size: 13px;
+}
+.contact-footer input:-moz-placeholder { /* Firefox 18- */
+  font-size: 13px;
+} 
+
+.subfooter {
+padding: 0.8% 3% 0.5%;
+}     
+
+.submit-form {
+width: 35% !important;
+padding: 7px 20px !important;
+font-size: 14px;
+}
+
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    ul.navigation li {
+        width: 15%;
+    }
+    .search-icon {
+        width: 19%;
+    }
+    .searchicon img {
+        width: 18px;
+    }
+    .navigation-arrows {
+        width: 14%;
+    }
+    .slider-content {
+        max-width: 665px;
+    }
+    .heading {
+        padding-bottom: 2%;
+    }
+    .col-sm-2.thumb-gallery {
+        max-width: 33%;
+        margin-bottom: 2%;
+    }
+    .last-nav li:last-child {
+        width: 48%;
+    }
+
+    .item img {
+        height: 220px !important;
+        }
+
+    .navigation li a,
+    .telephone a {
+        color: #fff;
+        font-size: 13px;
+    }
+    ul.navigation li a img,
+    .telephone a figure img {
+        width: 13px;
+        height: auto;
+    }
+    .filter {
+        font-size: 14px;
+    }
+    .shop-title h3 {
+        font-size: 17px;
+        margin-bottom: 2%;
+    }
+    .read-info a {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+    .shop-info .price {
+        font-size: 16px;
+    }
+    .shop-info h2 {
+        font-size: 16px;
+    }
+    .shop-title h4 {
+        font-size: 13px;
+        margin-bottom: 17px;
+    }
+    .col-md-3.main-shop-side {
+        max-width: 33.9%;
+        flex: 0 0 33%;
+    }
+    .main-shop-side {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-bottom: 2%;
+    }
+    .pagination {
+        margin-left: 38%;
+        margin-top: 4% !important;
+    }
+    .pagination>li>a,
+    .pagination>li>span {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+    .slider-content-image {
+        width: 100%;
+        height: 325px;
+    }
+    .slider-content h1 {
+        font-size: 2.5em;
+        margin-top: 11%;
+        margin-bottom: 4%;
+    }
+    .slider-content p {
+        font-size: 14px;
+    }
+    .caption h4 {
+        font-size: 15px;
+    }
+    .caption p {
+        color: #999;
+        font-size: 12px;
+    }
+    .btn {
+        padding: 0.46875rem 0rem !important;
+        font-size: 12px !important;
+    }
+    .selectCF .titleCF {
+        padding: 0 10px 0 20px;
+        font-size: 14px;
+    }
+    .selectCF {
+        margin: 0 6px;
+        padding: 0 0px;
+        width: 40%;
+        border: 1px solid #ccc;
+    }
+    .selectCF span {
+        height: 38px;
+        line-height: 38px;
+    }
+    .filter {
+        position: relative;
+        line-height: 39px;
+        height: 39px;
+        bottom: 13px;
+    }
+    #logo {
+        width: 30%;
+    }
+    nav {
+        width: 70%;
+    }
+    .telephone {
+        width: 30%;
+    }
+    #logo figure {
+        width: 66%;
+    }
+    .shop {
+        padding: 3% 4%;
+    }
+
+    .slider-container {
+        height: 370px;
+        }
+
+
+    /*details page*/
+
+
+    .shop-indetail-info h2, .mapsection h2 {
+     font-size: 25px;
+      }
+
+      .about-shop ul li span {
+          font-size: 14px;
+          }
+
+          #map{
+          height: 306px;
+          margin-bottom: 3%;
+          margin-top: 2%;
+          }
+
+          address h4, .contact-details h4, .mail-info h4 {
+            font-size: 17px;
+            }
+
+           address h5, .contact-details h5, .mail-info h5 {
+              font-size: 13px;
+              line-height: 1.5em;
+                }
+
+       .add-new-item img {
+                    width: 100%;
+                    height: 286px !important;
+                    }
+
+.shop-entry-detail {
+padding-top: 18%;
+}
+
+
+
+/*footer   */
+
+             .footer-1 h2 {
+                   font-size: 20px;
+                        }
+
+             .footer-1 h3 {
+               font-size: 14px;   
+               }
+
+               .contact-footer2 ul li{
+                font-size: 13px;
+               }    
+
+                   .social-icons li {
+                         padding: 5px 12px;
+                                }
+
+                  .contact-footer input {
+                                    display: block;
+                                    padding: 13px 14px 1px;
+                                    /* font-size: 12px; */
+                                    width: 85%;
+                                    } 
+
+            .contact-footer input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 13px;
+}
+.contact-footer input::-moz-placeholder { /* Firefox 19+ */
+  font-size: 13px;
+}
+.contact-footer input:-ms-input-placeholder { /* IE 10+ */
+  font-size: 13px;
+}
+.contact-footer input:-moz-placeholder { /* Firefox 18- */
+  font-size: 13px;
+} 
+
+.subfooter {
+padding: 0.8% 3% 0.5%;
+}     
+
+.submit-form {
+width: 85% !important;
+padding: 7px 20px !important;
+font-size: 14px;
+}
+
+.clear-link{
+    clear: both;
+}
+.set-padding-footer{
+    margin-bottom: 4%;
+}
+.margin-setting {
+width: 56% !important;
+}
+
+.offers-list {
+padding: 2% 0%;
+display: block !important;
+}
+
+.offers-list .col-sm-3{
+    width: 50%;
+}
+
+.border-offers:nth-of-type(2):after{
+width: 0px;
+}
+.border-offers{
+    padding-bottom: 2%;
+}
+}
+@media screen and (min-width: 460px) and (max-width: 767px) {
+    ul.navigation li {
+        width: 25%;
+    }
+    .sub-header {
+        display: none;
+    }
+    .toggle {
+        right: 31px;
+        top: 5px;
+    }
+    .menus-responsive {
+        display: block;
+    }
+    .search-icon {
+        width: 19%;
+    }
+    .searchicon img {
+        width: 18px;
+    }
+    .navigation-arrows {
+        width: 14%;
+    }
+    .slider-content {
+        max-width: 460px;
+    }
+    .heading {
+        padding-bottom: 2%;
+    }
+    .col-sm-2.thumb-gallery {
+        max-width: 33%;
+        margin-bottom: 2%;
+    }
+
+    .item img {
+        height: 190px !important;
+        }
+
+    .last-nav li:last-child {
+        width: 48%;
+    }
+    .navigation li a,
+    .telephone a {
+        color: #fff;
+        font-size: 13px;
+    }
+    ul.navigation li a img,
+    .telephone a figure img {
+        width: 13px;
+        height: auto;
+    }
+    .filter {
+        font-size: 14px;
+    }
+    .shop-title h3 {
+        font-size: 17px;
+        margin-bottom: 2%;
+    }
+    .read-info a {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+    .shop-info .price {
+        font-size: 16px;
+    }
+    .shop-info h2 {
+        font-size: 16px;
+    }
+    .shop-title h4 {
+        font-size: 13px;
+        margin-bottom: 17px;
+    }
+    .col-md-3.main-shop-side {
+        max-width: 49.9%;
+        flex: 0 0 49.9%;
+    }
+    .main-shop-side {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-bottom: 2%;
+    }
+    .pagination {
+        margin-left: 38%;
+        margin-top: 4% !important;
+    }
+    .pagination>li>a,
+    .pagination>li>span {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .inner-images .row{
+            display: flex !important;
+            flex-direction: column-reverse;
+        }
+
+    .slider-content-image {
+        width: 100%;
+        height: 270px !important;
+    }
+    .slider-content h1 {
+        font-size: 2em;
+        margin-top: 22%;
+        margin-bottom: 4%;
+    }
+    .slider-content p {
+        font-size: 14px;
+    }
+    .caption h4 {
+        font-size: 15px;
+    }
+    .caption p {
+        color: #999;
+        font-size: 12px;
+    }
+    .btn {
+        padding: 0.46875rem 0rem !important;
+        font-size: 12px !important;
+    }
+    .selectCF .titleCF {
+        padding: 0 10px 0 20px;
+        font-size: 14px;
+    }
+    .selectCF {
+        margin: 0 6px;
+        padding: 0 0px;
+        width: 37%;
+        border: 1px solid #ccc;
+    }
+    .selectCF span {
+        height: 38px;
+        line-height: 38px;
+    }
+    .filter {
+        position: relative;
+        line-height: 39px;
+        height: 39px;
+        bottom: 13px;
+    }
+    #logo {
+        width: 30%;
+        top: 3px;
+        position: relative;
+    }
+    nav {
+        width: 70%;
+    }
+    .telephone {
+        width: 30%;
+    }
+    #logo figure {
+        width: 66%;
+    }
+    .shop {
+        padding: 3% 4%;
+    }
+
+     .slider-container {
+        height: 320px;
+        }
+
+    /*details page*/
+.border-offers{
+    padding-bottom: 4%;
+}
+
+#diamond {
+width: 200px;
+height: 200px;
+}
+
+#diamond h3 {
+font-size: 19px;
+}
+
+#diamond h4 {
+font-size: 21px;
+}
+
+#diamond h4 span{
+    font-size: 34px;
+}
+.shop-entry-detail {
+padding-top: 18%;
+}
+
+.shop-entry {
+height: 289px;
+}
+
+.add-new-item img {
+height: 275px !important;
+}
+    .shop-indetail-info h2, .mapsection h2 {
+     font-size: 22px;
+      }
+
+      .about-shop ul li span {
+          font-size: 14px;
+          }
+
+          #map{
+          height: 280px;
+          margin-bottom: 3%;
+          margin-top: 2%;
+          }
+
+          address h4, .contact-details h4, .mail-info h4 {
+            font-size: 16px;
+            }
+
+           address h5, .contact-details h5, .mail-info h5 {
+              font-size: 13px;
+              line-height: 1.5em;
+                }
+
+                .contact-info1 {
+                    padding: 7%;
+                    margin: 3% 19% 10%;
+                    }
+
+                    .contact-info {
+                        padding: 6% 10%;
+                        margin: 1% 19% 12%;
+                        }
+
+                        .contact-info2{
+                          margin: 1% 19% 12%;
+                        }
+
+                .home-round{
+                  left: 46%;
+                }    
+
+                /*footer   */
+
+             .footer-1 h2 {
+                   font-size: 20px;
+                        }
+
+             .footer-1 h3 {
+               font-size: 14px;   
+               }
+
+               .contact-footer2 ul li{
+                font-size: 13px;
+               }    
+
+                   .social-icons li {
+                         padding: 5px 12px;
+                                }
+
+                  .contact-footer input {
+                                    display: block;
+                                    padding: 13px 14px 1px;
+                                    /* font-size: 12px; */
+                                    width: 85%;
+                                    } 
+
+            .contact-footer input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 13px;
+}
+.contact-footer input::-moz-placeholder { /* Firefox 19+ */
+  font-size: 13px;
+}
+.contact-footer input:-ms-input-placeholder { /* IE 10+ */
+  font-size: 13px;
+}
+.contact-footer input:-moz-placeholder { /* Firefox 18- */
+  font-size: 13px;
+} 
+
+.subfooter {
+padding: 0.8% 3% 0.5%;
+}     
+
+.submit-form {
+width: 85% !important;
+padding: 7px 20px !important;
+font-size: 14px;
+}
+
+.clear-link{
+    clear: both;
+}
+
+.set-padding-footer{
+    margin-bottom: 4%;
+}
+
+.margin-setting {
+width: 60% !important;
+}
+
+.offers-list {
+padding: 2% 0%;
+display: block !important;
+}
+
+.offers-list .col-sm-3{
+    width: 50%;
+}
+
+.border-offers:nth-of-type(2):after{
+width: 0px;
+}
+
+.border-offers{
+    padding-bottom: 2%;
+}
+}
+@media screen and (min-width: 300px) and (max-width: 459px) {
+    .sub-header {
+        display: none;
+    }
+
+    .toggle {
+        right: 31px;
+        top: 5px;
+    }
+
+    .menus-responsive {
+        display: block;
+    }
+
+    .search-icon {
+        width: 19%;
+    }
+
+    .searchicon img {
+        width: 18px;
+    }
+
+     .slider-container {
+        height: 250px;
+        }
+
+    .navigation-arrows {
+        width: 44%;
+                       }
+
+    .heading h3 {
+        font-size: 24px;
+        }
+
+    .slider-content {
+        max-width: 320px;
+    }
+
+    .heading {
+        padding-bottom: 2%;
+    }
+
+    .col-sm-2.thumb-gallery {
+        max-width: 100%;
+        margin-bottom: 2%;
+    }
+
+    .item img {
+        height: 200px !important;
+        }
+
+    .last-nav li:last-child {
+        width: 48%;
+    }
+
+    .navigation li a,
+    .telephone a {
+        color: #fff;
+        font-size: 13px;
+    }
+
+    ul.navigation li a img,
+    .telephone a figure img {
+        width: 13px;
+        height: auto;
+    }
+
+    .filter {
+        font-size: 14px;
+    }
+
+    .shop-title h3 {
+        font-size: 17px;
+        margin-bottom: 2%;
+    }
+
+    .read-info a {
+        padding: 6px 16px;
+        font-size: 13px;
+    }
+
+    .shop-info .price {
+        font-size: 16px;
+    }
+
+    .shop-info h2 {
+        font-size: 16px;
+    }
+
+    .shop-title h4 {
+        font-size: 13px;
+        margin-bottom: 17px;
+    }
+
+    .col-md-3.main-shop-side {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .main-shop-side {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-bottom: 2%;
+    }
+
+    .pagination {
+        margin-left: 0%;
+        margin-top: 4% !important;
+    }
+
+    .pagination>li>a,
+    .pagination>li>span {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .slider-content-image {
+        width: 100%;
+        height: 210px !important;
+    }
+
+    .slider-container .slider-content-image {
+             left: 49%;
+        }
+
+        .inner-images .row{
+            display: flex !important;
+            flex-direction: column-reverse;
+        }
+
+    .slider-content h1 {
+        font-size: 1.5em;
+        margin-top: 25%;
+        margin-bottom: 4%;
+    }
+
+    .slider-content p {
+        font-size: 14px;
+    }
+
+    .caption h4 {
+        font-size: 15px;
+    }
+    .caption p {
+        color: #999;
+        font-size: 12px;
+    }
+    .btn {
+        padding: 0.46875rem 0rem !important;
+        font-size: 12px !important;
+    }
+    .selectCF .titleCF {
+        padding: 0 10px 0 20px;
+        font-size: 14px;
+    }
+    .selectCF {
+        margin: 0 6px;
+        padding: 0 0px;
+        width: 95%;
+        border: 1px solid #ccc;
+    }
+    .selectCF span {
+        height: 38px;
+        line-height: 38px;
+    }
+    .filter {
+        position: relative;
+        line-height: 39px;
+        height: 39px;
+        width: 100%;
+        bottom: 0px;
+    }
+    #logo {
+        width: 30%;
+        top: 3px;
+        position: relative;
+    }
+    nav {
+        width: 60%;
+    }
+    ul.navigation li {
+        width: 41%;
+    }
+    .telephone {
+        width: 40%;
+    }
+    #logo figure {
+        width: 66%;
+    }
+    .shop {
+        padding: 3% 4%;
+    }
+
+    /*details page*/
+
+
+    .shop-indetail-info h2, .mapsection h2 {
+     font-size: 20px;
+      }
+
+      .about-shop ul li span {
+          font-size: 14px;
+          }
+
+          #map{
+          height: 250px;
+          margin-bottom: 3%;
+          margin-top: 2%;
+          }
+
+          address h4, .contact-details h4, .mail-info h4 {
+            font-size: 15px;
+            }
+
+           address h5, .contact-details h5, .mail-info h5 {
+              font-size: 13px;
+              line-height: 1.5em;
+                }
+
+                 .contact-info1 {
+                    padding: 7%;
+                    margin: 3% 12% 10%;
+                    }
+
+                    .contact-info {
+                        padding: 6% 10%;
+                        margin: 1% 12% 12%;
+                        }
+
+                        .contact-info2{
+                          margin: 1% 12% 12%;
+                        }
+
+                .home-round{
+                  left: 43%;
+                }    
+
+               
+.shop-entry {
+position: relative;
+width: 100%;
+height: 240px;}
+
+.shop-entry-detail {
+padding-top: 23%;
+}
+
+.add-new-item img {
+width: 100%;
+height: 221px !important;
+}
+
+/*footer   */
+
+             .footer-1 h2 {
+                   font-size: 20px;
+                        }
+
+             .footer-1 h3 {
+               font-size: 14px;   
+               }
+
+               .contact-footer2 ul li{
+                font-size: 13px;
+               }    
+
+                   .social-icons li {
+                         padding: 5px 12px;
+                                }
+
+                  .contact-footer input {
+                                    display: block;
+                                    padding: 13px 14px 1px;
+                                    /* font-size: 12px; */
+                                    width: 85%;
+                                    } 
+
+            .contact-footer input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 13px;
+}
+.contact-footer input::-moz-placeholder { /* Firefox 19+ */
+  font-size: 13px;
+}
+.contact-footer input:-ms-input-placeholder { /* IE 10+ */
+  font-size: 13px;
+}
+.contact-footer input:-moz-placeholder { /* Firefox 18- */
+  font-size: 13px;
+} 
+
+.subfooter {
+padding: 0.8% 3% 0.5%;
+}     
+
+.submit-form {
+width: 80% !important;
+padding: 7px 20px !important;
+font-size: 14px;
+}
+
+.set-padding-footer{
+    margin-bottom: 4%;
+}
+
+.margin-setting {
+width: 70% !important;
+}
+
+.offers-list {
+padding: 2% 0%;
+display: block !important;
+}
+
+.offers-list .col-sm-3{
+    width: 100%;
+}
+
+.border-offers:after{
+   width: 0px;
+}
+
+.border-offers{
+    padding-bottom: 4%;
+}
+
+#diamond {
+width: 190px;
+height: 190px;
+}
+
+#diamond h3 {
+font-size: 17px;
+}
+
+#diamond h4 {
+font-size: 19px;
+}
+
+#diamond h4 span{
+    font-size: 30px;
+}

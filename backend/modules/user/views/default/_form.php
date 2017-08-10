@@ -20,6 +20,9 @@ use backend\modules\user\models\UserShopCategory;
    <div class="col-sm-4">
      <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
    </div>
+    <div class="col-sm-4">
+     <?= $form->field($model, 'password')->textInput(['maxlength' => true]) ?>
+   </div>
   </div>
    <div class="row">
     <div class="col-sm-4">
@@ -55,7 +58,7 @@ use backend\modules\user\models\UserShopCategory;
        <?= $form->field($modelUserShop, 'end_time')->textInput(['maxlength' => true]) ?>
      </div>
      <div class ="col-sm-4">
-       <?= $form->field($modelUserShopAddress, 'address')->textInput(['maxlength' => true,'id'=>'autocomplete']) ?>
+       <?= $form->field($modelUserShopAddress, 'address')->textInput(['maxlength' => true,'id'=>'shopaddressautocomplete']) ?>
      </div> <div class ="col-sm-4">
         <?= $form->field($modelUserShopAddress, 'state')->textInput(['maxlength' => true,'id'=>'administrative_area_level_1']) ?>
       </div>
