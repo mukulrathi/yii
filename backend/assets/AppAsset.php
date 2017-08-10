@@ -15,6 +15,8 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+      "js/common.js",
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyB9CdZk3plxvoOJQEt_FT4ZOZ86rFRxTxw&libraries=places&callback=initAutocomplete" ,
     ];
     public $depends = [
         'yii\web\YiiAsset',

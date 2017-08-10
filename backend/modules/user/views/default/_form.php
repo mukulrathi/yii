@@ -8,11 +8,11 @@ use backend\modules\user\models\UserShopCategory;
 /* @var $model backend\modules\user\models\User */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
 <div class="user-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+  <body>
 
+    <?php $form = ActiveForm::begin(); ?>
    <div class="row">
     <div class="col-sm-4">
       <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
@@ -32,16 +32,16 @@ use backend\modules\user\models\UserShopCategory;
      <?= $form->field($modelUserProfile, 'mobile')->textInput(['maxlength' => true]) ?>
    </div>
   <div class="col-sm-4">
-    <?= $form->field($modelUserProfile, 'address')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($modelUserProfile, 'address')->textInput(['maxlength' => true,'id'=>"autocomplete","onFocus"=>"geolocate()"]) ?>
   </div>
     <div class="col-sm-4">
-      <?= $form->field($modelUserProfile, 'state')->textInput(['maxlength' => true]) ?>
+      <?= $form->field($modelUserProfile, 'state')->textInput(['maxlength' => true,'id'=>"administrative_area_level_1"]) ?>
     </div>
    <div class="col-sm-4">
-     <?= $form->field($modelUserProfile, 'city')->textInput(['maxlength' => true]) ?>
+     <?= $form->field($modelUserProfile, 'city')->textInput(['maxlength' => true,'id'=>'locality']) ?>
    </div>
    <div class="col-sm-4">
-     <?= $form->field($modelUserProfile, 'landmark')->textInput(['maxlength' => true]) ?>
+     <?= $form->field($modelUserProfile, 'landmark')->textInput(['maxlength' => true,'id'=>'street_number ']) ?>
    </div>
 
        <div class ="col-sm-4">
@@ -55,19 +55,19 @@ use backend\modules\user\models\UserShopCategory;
        <?= $form->field($modelUserShop, 'end_time')->textInput(['maxlength' => true]) ?>
      </div>
      <div class ="col-sm-4">
-       <?= $form->field($modelUserShopAddress, 'address')->textInput(['maxlength' => true]) ?>
+       <?= $form->field($modelUserShopAddress, 'address')->textInput(['maxlength' => true,'id'=>'autocomplete']) ?>
      </div> <div class ="col-sm-4">
-        <?= $form->field($modelUserShopAddress, 'state')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($modelUserShopAddress, 'state')->textInput(['maxlength' => true,'id'=>'administrative_area_level_1']) ?>
       </div>
       <div class ="col-sm-4">
-        <?= $form->field($modelUserShopAddress, 'city')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($modelUserShopAddress, 'city')->textInput(['maxlength' => true ,'id'=>'locality']) ?>
       </div>
       <div class ="col-sm-4">
-        <?= $form->field($modelUserShopAddress, 'country')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($modelUserShopAddress, 'country')->textInput(['maxlength' => true,'id'=>'country']) ?>
       </div>
 
       <div class ="col-sm-4">
-         <?= $form->field($modelUserShopAddress, 'postal_code')->textInput(['maxlength' => true]) ?>
+         <?= $form->field($modelUserShopAddress, 'postal_code')->textInput(['maxlength' => true,'id'=>'postal_code']) ?>
        </div>
        <div class ="col-sm-4">
          <?= $form->field($modelUserShop, 'shop_image[]')->widget(FileInput::classname(), [
