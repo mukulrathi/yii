@@ -15,8 +15,9 @@ use Yii;
  * @property integer $end_time
  * @property integer $created_at
  * @property integer $updated_at
- *
  * @property User $user
+ * * @property UserShopAddress $userShopAddress
+ * @property UserShopFileMapping[] $userShopFileMappings
  */
 class UserShop extends \yii\db\ActiveRecord
 {
@@ -66,5 +67,21 @@ class UserShop extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserShopAddress()
+    {
+        return $this->hasOne(UserShopAddress::className(), ['shop_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserShopFileMappings()
+    {
+        return $this->hasMany(UserShopFileMapping::className(), ['shop_id' => 'id']);
     }
 }

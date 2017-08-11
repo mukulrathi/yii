@@ -16,6 +16,10 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
+        'thumbnail' => [
+            'class' => 'himiklab\thumbnail\EasyThumbnail',
+            'cacheAlias' => 'assets/gallery_thumbnails',
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,

@@ -86,7 +86,9 @@ class DefaultController extends Controller
               $valid = $valid && $modelUserShop->validate();
                 $valid = $valid &&  $modelUserShopAddress->validate();
                 $modelShopFile->gallery = UploadedFile::getInstances($modelUserShop, 'shop_image');
-               if($valid)
+                //  print_r($modelUserShopAddress->errors);
+
+                  if($valid)
                {
 
                  $transaction = Yii::$app->db->beginTransaction();
@@ -120,7 +122,7 @@ class DefaultController extends Controller
 
                 return $this->redirect(['view', 'id' => $model->id]);
             }
-            print_r($modelUserShopAddress->errors);
+            print_r($modelUserProfile->errors);
         //    Yii::$app->session->setFlash('error', 'Error during User Request');
 
 
