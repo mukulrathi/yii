@@ -15,7 +15,7 @@ use yii\helpers\Url;
 <div class="shop-container">
 
     <div class="img-container">
-        <a href="details.php">
+        <a href="">
             <?php $shopimage = (!empty($model->userShopFileMappings[0]->file->path)) ? ($model->userShopFileMappings[0]->file->path)
                 :  Url::to('uploads/no-image-avaailable.png', true) ?>
             <?= EasyThumbnailImage::thumbnailImg($shopimage, 370, 250, EasyThumbnailImage::THUMBNAIL_OUTBOUND)?>
@@ -33,7 +33,7 @@ use yii\helpers\Url;
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
         <div class="read-info">
-            <a href="#">Read More</a>
+            <a href=<?php echo Url::to(['/site/view-shop','id'=>$model->id]) ?>>Read More</a>
         </div>
     </div>
 </div>

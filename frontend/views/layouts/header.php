@@ -40,34 +40,7 @@
 </div>
 <!-- top menus -->
 <header>
-    <div class="wrapper">
-        <div class="inner-wrap">
-            <div class="telephone">
-                <a href="tel:1-847-555-5555">
-                    <figure><img src="img/mobile.png" alt="phone">
-                    </figure><span>1-847-555-5555</span>
-                </a>
-            </div>
-            <nav>
-                <ul class="navigation">
-                    <li>
-                        <a data-toggle="modal" data-target="#login-modal">
-                            <figure><img src="img/login.png" alt="Login">
-                            </figure><span>Login</span>
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="#">
-                            <figure><img src="img/register.png" alt="Register">
-                            </figure><span>Register</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </nav>
-        </div>
-    </div>
 
     <div class="sub-header">
         <div id="logo">
@@ -76,12 +49,11 @@
         </div>
         <nav>
             <ul class="navigation last-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">About Us</a>
+                <li><a href="/site/index">Home</a></li>
+                <li><a href="/site/about">About Us</a>
                 </li>
-                <li><a href="#">Career</a>
-                </li>
-                <li><a href="#">Contact Us</a>
+
+                <li><a href="/site/contact">Contact Us</a>
                 </li>
             </ul>
         </nav>
@@ -91,11 +63,11 @@
         <div class="menu-container">
             <div class="menu-res">
                 <ul class="nav-res">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="/site/index">Home</a></li>
+                    <li><a href="/site/about">About Us</a>
                     <li><a href="#">Career</a>
                     </li>
-                    <li><a href="#">Contact Us</a>
+                    <li><a href="/site/contact">Contact Us</a>
                     </li>
                 </ul>
             </div>

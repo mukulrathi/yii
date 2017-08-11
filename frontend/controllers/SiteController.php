@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use backend\modules\user\models\UserShop;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -139,6 +140,14 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionViewShop($id)
+    {
+        $model = UserShop::find()->where(['id'=>$id])->one();
+        return $this->render('details',[
+            'model'=>$model
+        ]);
     }
 
     /**

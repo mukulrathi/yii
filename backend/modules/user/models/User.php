@@ -17,7 +17,7 @@ use common\models\User as BaseUser;
  * @property integer $created_at
  * @property integer $updated_at
  *
- * @property UserProfile[] $userProfiles
+ * @property UserProfile[] $userProfile
  	* @property UserShop[] $userShops
  */
 class User extends BaseUser
@@ -79,7 +79,7 @@ class User extends BaseUser
      */
     public function getUserProfiles()
     {
-        return $this->hasMany(UserProfile::className(), ['user_id' => 'id']);
+        return $this->hasOne(UserProfile::className(), ['user_id' => 'id']);
     }
     /**
     * @return \yii\db\ActiveQuery
