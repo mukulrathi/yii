@@ -8,45 +8,43 @@
 use himiklab\thumbnail\EasyThumbnailImage;
 use yii\helpers\Url;
 ?>
+<link href="https://www.jssor.com/style/site/css/site-style-2.1.0.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jssor-slider/25.2.0/jssor.slider.min.js"></script>
+<script>
+    jssor_slider1_init = function (containerId) {
+        var options = { $AutoPlay: 1 };
+        var jssor_slider1 = new $JssorSlider$(containerId, options);
+    };
+</script>
 
-<div class="owl-carousel owl-theme">
 
-        <?php if (count($images) > 0) {
-      foreach($images as $out):?>
-      <div class="item">
-          <?= EasyThumbnailImage::thumbnailImg($out->file->path, 370, 250, EasyThumbnailImage::THUMBNAIL_OUTBOUND)?>
-          <h1 class="slider-single-title">shop image</h1>
-      </div>
-    <?php endforeach ; }
+<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;">
+    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 300px;">
+    <!-- Slides Container -->
+    <?php if (count($images) > 0) {
+        foreach($images as $out):?>
+
+<!--                <div><img u="image" src="image1.jpg" /></div>-->
+<!--                <div><img u="image" src="image2.jpg" /></div>-->
+
+            <div >
+                <?= EasyThumbnailImage::thumbnailImg($out->file->path, 370, 250, EasyThumbnailImage::THUMBNAIL_OUTBOUND)?>
+
+                <h4 class="slider-single-title">shop image</h4>
+            </div>
+        <?php endforeach ; }
     else
-        {
-         echo 'No image avaialble';
-        }
+    {
+        echo 'No image avaialble';
+    }
 
     ?>
+    <!-- Trigger -->
+
+    </div>
+
+    <script>jssor_slider1_init('slider1_container');</script>
+
+</div>
 
 
- </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-
-<script type="text/javascript">
-  $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:1
-        }
-    }
-})
-</script>
