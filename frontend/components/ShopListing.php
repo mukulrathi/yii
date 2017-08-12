@@ -16,7 +16,7 @@ class ShopListing extends \yii\base\Widget
         public function run()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => UserShop::find()->limit(6)->orderBy('created_at DESC'),
+            'query' => UserShop::find()->orderBy('created_at DESC'),
             'pagination' => false
         ]);
         return $this->render('shop_listing', [

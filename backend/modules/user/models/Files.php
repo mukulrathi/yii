@@ -13,7 +13,8 @@ use Yii;
  * @property string $mimetype
  * @property string $extension
  * @property string $path
- *
+ * @property string $url
+ 
  * @property UserShopFileMapping[] $userShopFileMappings
  */
 class Files extends \yii\db\ActiveRecord
@@ -32,7 +33,7 @@ class Files extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['filename', 'filesize', 'mimetype', 'extension', 'path'], 'required'],
+            [['filename', 'filesize', 'mimetype', 'extension', 'path','url'], 'required'],
             [['filesize'], 'integer'],
             [['filename', 'mimetype', 'extension', 'path'], 'string', 'max' => 255],
         ];
@@ -50,6 +51,7 @@ class Files extends \yii\db\ActiveRecord
             'mimetype' => 'Mimetype',
             'extension' => 'Extension',
             'path' => 'Path',
+            'url' => 'Url',
         ];
     }
 

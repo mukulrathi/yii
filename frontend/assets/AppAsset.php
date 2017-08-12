@@ -21,16 +21,20 @@ class AppAsset extends AssetBundle
         'css/slick.css',
         'css/style.css',
         'css/style_theme.css',
+        "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css",
+
     ];
     public $js = [
-        'js/all.js',
         'js/bootstrapMaterialDesign.js',
         'js/material.min.js',
         'js/slick.min.js',
         'js/custome.js',
+        "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" ,
+        'js/all.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+
     ];
 }

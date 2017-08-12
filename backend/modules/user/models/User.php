@@ -17,7 +17,7 @@ use common\models\User as BaseUser;
  * @property integer $created_at
  * @property integer $updated_at
  *
- * @property UserProfile[] $userProfile
+  * @property UserProfile $UserProfile
  	* @property UserShop[] $userShops
  */
 class User extends BaseUser
@@ -51,7 +51,7 @@ class User extends BaseUser
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
-            ['password', 'required'],
+         //   ['password', 'required'],
             ['password', 'string', 'min' => 6],
         ];
     }
@@ -74,14 +74,10 @@ class User extends BaseUser
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUserProfiles()
+     public function getUserProfile()
     {
         return $this->hasOne(UserProfile::className(), ['user_id' => 'id']);
-    }
-    /**
+    } /**
     * @return \yii\db\ActiveQuery
     */
    public function getUserShops()

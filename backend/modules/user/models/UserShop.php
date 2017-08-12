@@ -15,6 +15,7 @@ use Yii;
  * @property integer $end_time
  * @property integer $created_at
  * @property integer $updated_at
+ * @property string $deescription
  * @property User $user
  * * @property UserShopAddress $userShopAddress
  * @property UserShopFileMapping[] $userShopFileMappings
@@ -40,6 +41,7 @@ class UserShop extends \yii\db\ActiveRecord
             [[ 'shop_name', 'shop_category_id', 'start_time', 'end_time'], 'required'],
             [['user_id', 'shop_category_id', 'start_time', 'end_time', 'created_at', 'updated_at'], 'integer'],
             [['shop_name'], 'string', 'max' => 255],
+            [['deescription'], 'string'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
@@ -56,6 +58,7 @@ class UserShop extends \yii\db\ActiveRecord
             'shop_category_id' => 'Shop Category ID',
             'start_time' => 'Start Time',
             'end_time' => 'End Time',
+            'deescription' => 'Description',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
@@ -84,4 +87,12 @@ class UserShop extends \yii\db\ActiveRecord
     {
         return $this->hasMany(UserShopFileMapping::className(), ['shop_id' => 'id']);
     }
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserShopOrders()
+    {
+        return $this->hasMany(UserShopOrders::className(), ['shop_id' => 'id']);
+    }
+
 }

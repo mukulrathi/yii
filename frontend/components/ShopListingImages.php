@@ -11,18 +11,34 @@ namespace frontend\components;
 use backend\modules\user\models\UserShop;
 use Yii;
 use yii\data\ActiveDataProvider;
-class ShopListing extends \yii\base\Widget
+use yii\base\Widget;
+use yii\web\NotFoundHttpException;
+
+class ShopListingImages extends Widget
 {
+   public  $shop_id;
     public function run()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => UserShop::find()->limit(6)->orderBy('created_at DESC'),
-            'pagination' => false
-        ]);
-        return $this->render('shop_listing', [
-            'dataProvider' => $dataProvider
-        ]);
+        $model = $this->findModel($this->shop_id);
 
+        if($model) {
+            $images = $model->userShopFileMappings;
 
+            return $this->render('gallery_widget', [
+                'images' => $images
+            ]);
+        } else {
+            return false;
+        }
     }
+
+        protected function findModel($id)
+    {
+        if (($model = UserShop::findOne($id)) !== null) {
+            return $model;
+        } else {
+            return false;
+        }
+    }
+
 }

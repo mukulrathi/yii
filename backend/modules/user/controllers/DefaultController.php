@@ -92,8 +92,6 @@ class DefaultController extends Controller
                {
 
                  $transaction = Yii::$app->db->beginTransaction();
-                $model->setPassword($model->password);
-                $model->generateAuthKey();
                  try{
                   
                    if($flag = $model->save(false))
@@ -102,6 +100,7 @@ class DefaultController extends Controller
                      $modelUserProfile->user_id = $model->id;
                      $modelUserShop->user_id   = $model->id;
                      $modelUserShop->save(false);
+                //     print_r($_POST);exit('12');
                      $modelUserShopAddress->shop_id = $modelUserShop->id;
                      $modelShopFile->upload($modelUserShop);
                     $flag = ($modelUserProfile->save(false) && $modelUserShopAddress->save(false));
@@ -122,7 +121,7 @@ class DefaultController extends Controller
 
                 return $this->redirect(['view', 'id' => $model->id]);
             }
-            print_r($modelUserProfile->errors);
+            print_r($model->errors);
         //    Yii::$app->session->setFlash('error', 'Error during User Request');
 
 

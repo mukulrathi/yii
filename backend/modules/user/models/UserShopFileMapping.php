@@ -100,7 +100,7 @@ class UserShopFileMapping extends \yii\db\ActiveRecord
         $file->mimetype = $uploadedFile->type;
         $file->extension = $uploadedFile->extension;
         $file->path      = $path;
-      //  $file->url       = $url;
+        $file->url       = $url;
         $file->save(false);
 
         $fileE = new UserShopFileMapping();

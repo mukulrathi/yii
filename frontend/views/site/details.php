@@ -1,3 +1,10 @@
+<?php
+use frontend\components\ShopListingImages;
+use yii\helpers\Url;
+use yii\widgets\ListView;
+use yii\widgets\Pjax;
+use yii\helpers\Html;
+?>
 <main role="main">
 
       <!-- start slider section -->
@@ -12,48 +19,9 @@
             <div class="inner-images">
                 <div class="row">
                     <div class="col-sm-6">
+                        <?= ShopListingImages::widget(['shop_id' => $model->id]) ?>
 
-<div class="slider-container">
-  <div class="slider-content-image">
-
-   <div class="slider-single">
-      <img class="slider-single-image" src="img/cat-shop1.jpg" alt="shop image slide" />
-       <h1 class="slider-single-title">shop image</h1>
-   </div>
-
-    <div class="slider-single">
-      <img class="slider-single-image" src="img/cat-shop2.jpg" alt="shop image slide" />
-       <h1 class="slider-single-title">shop image</h1>
-    </div>
-
-    <div class="slider-single">
-      <img class="slider-single-image" src="img/cat-shop3.jpg" alt="shop image slide" />
-        <h1 class="slider-single-title">shop image</h1>
-    </div>
-
-    <div class="slider-single">
-      <img class="slider-single-image" src="img/cat-shop1.jpg" alt="shop image slide" />
-      <h1 class="slider-single-title">shop image</h1>
-    </div>
-
-
-    <div class="slider-single">
-      <img class="slider-single-image" src="img/cat-shop2.jpg" alt="shop image slide" />
-      <h1 class="slider-single-title">shop image</h1>
-   </div>
-
-    <div class="slider-single">
-      <img class="slider-single-image" src="img/cat-shop3.jpg" alt="shop image slide" />
-       <h1 class="slider-single-title">shop image</h1>
-    </div>
-  </div>
-
-  <a class="slider-left" href="javascript:void(0);"><i class="fa fa-arrow-left"></i></a>
-  <a class="slider-right" href="javascript:void(0);"><i class="fa fa-arrow-right"></i></a>
-</div>
-</div>
-
-
+                    </div>
 
 <!-- ends here -->
        <div class="col-sm-6">
