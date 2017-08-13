@@ -17,7 +17,8 @@ use Yii;
  * @property integer $updated_at
  * @property string $deescription
  * @property User $user
- * * @property UserShopAddress $userShopAddress
+ * @property UserShopAddress $userShopAddress
+ * @property UserShopOrders[] $userShopOrders
  * @property UserShopFileMapping[] $userShopFileMappings
  */
 class UserShop extends \yii\db\ActiveRecord

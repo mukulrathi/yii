@@ -17,7 +17,9 @@ class ShopListing extends \yii\base\Widget
     {
         $dataProvider = new ActiveDataProvider([
             'query' => UserShop::find()->orderBy('created_at DESC'),
-            'pagination' => false
+            'pagination' => [
+                'pageSize' => 10,
+            ],
         ]);
         return $this->render('shop_listing', [
             'dataProvider' => $dataProvider

@@ -16,37 +16,37 @@ use frontend\components\ShopListing;
     </section>
     <!-- slider ends here -->
     <section id="" class="shop">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-offset-2 col-md-10 col-sm-offset-1 col-sm-11">
-                    <form method="post" action="#" class="form-inline">
-                        <div id="wapper">
-                            <div class="style1">
-                                <select class="select">
-                                    <option value="0" selected="">Choose One City</option>
-                                    <option value="2">Nagpur</option>
-                                    <option value="3">Mumbai </option>
-                                    <option value="4">Pune</option>
-
-                                </select>
-
-                                <select class="select">
-                                    <option value="0" selected="">Shop Category</option>
-                                    <option value="0">First</option>
-                                    <option value="2">Second</option>
-                                    <option value="3">Third</option>
-                                    <option value="4">Fifth</option>
-                                    <option value="5">sixth</option>
-                                    <option value="6">seventh</option>
-                                </select>
-                                <button type="submit" class="filter">Filter</button>
-                            </div>
-                            <div id="event-change"></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <!--        <div class="container">-->
+    <!--            <div class="row">-->
+    <!--                <div class="col-md-offset-2 col-md-10 col-sm-offset-1 col-sm-11">-->
+    <!--                    <form method="post" action="#" class="form-inline">-->
+    <!--                        <div id="wapper">-->
+    <!--                            <div class="style1">-->
+    <!--                                <select class="select">-->
+    <!--                                    <option value="0" selected="">Choose One City</option>-->
+    <!--                                    <option value="2">Nagpur</option>-->
+    <!--                                    <option value="3">Mumbai </option>-->
+    <!--                                    <option value="4">Pune</option>-->
+    <!---->
+    <!--                                </select>-->
+    <!---->
+    <!--                                <select class="select">-->
+    <!--                                    <option value="0" selected="">Shop Category</option>-->
+    <!--                                    <option value="0">First</option>-->
+    <!--                                    <option value="2">Second</option>-->
+    <!--                                    <option value="3">Third</option>-->
+    <!--                                    <option value="4">Fifth</option>-->
+    <!--                                    <option value="5">sixth</option>-->
+    <!--                                    <option value="6">seventh</option>-->
+    <!--                                </select>-->
+    <!--                                <button type="submit" class="filter">Filter</button>-->
+    <!--                            </div>-->
+    <!--                            <div id="event-change"></div>-->
+    <!--                        </div>-->
+    <!--                    </form>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
 
 <?php  echo  ShopListing::widget() ?>
 

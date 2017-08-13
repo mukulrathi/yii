@@ -4,15 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\file\FileInput;
 use backend\modules\user\models\UserShopCategory;
-//use dosamigos\tinymce\TinyMce;
+use dosamigos\tinymce\TinyMce;
 
 /* @var $this yii\web\View */
 /* @var $model backend\modules\user\models\User */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 <div class="user-form">
-
-  <body>
 
     <?php $form = ActiveForm::begin(); ?>
    <div class="row">
@@ -62,21 +60,21 @@ use backend\modules\user\models\UserShopCategory;
       </div>
     </div>
     <div class="row">
-<!--      <div class="col-sm-12">-->
-<!--          --><?//= $form->field($modelUserShop, 'deescription')->widget(TinyMce::className(), [
-//              'options' => ['rows' => 6],
-//              'clientOptions' => [
-//                  'plugins' => [
-//                      "advlist autolink lists link charmap print preview anchor",
-//                      "searchreplace visualblocks code fullscreen",
-//                      "insertdatetime media table contextmenu paste"
-//                  ],
-//                  'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-//                  'menubar' => false
-//              ]
-//          ]);?>
-<!---->
-<!--      </div>-->
+     <div class="col-sm-12">
+          <?= $form->field($modelUserShop, 'deescription')->widget(TinyMce::className(), [
+              'options' => ['rows' => 6],
+              'clientOptions' => [
+                  'plugins' => [
+                      "advlist autolink lists link charmap print preview anchor",
+                      "searchreplace visualblocks code fullscreen",
+                      "insertdatetime media table contextmenu paste"
+                  ],
+                  'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+                  'menubar' => false
+              ]
+          ]);?>
+
+      </div>
 
     </div>
     <div class="row">

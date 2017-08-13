@@ -73,7 +73,7 @@ class DefaultController extends Controller
         $modelUserShop   = new UserShop();
         $modelUserShopAddress = new UserShopAddress();
         $modelShopFile = new UserShopFileMapping();
-        $file_urls = [];
+  //      $file_urls = [];
 
 
         if ($model->load(Yii::$app->request->post()) &&
@@ -148,12 +148,23 @@ class DefaultController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $modelUserProfile = $model->userProfile;
+  //print_r($modelUserProfile); exit('12');
+        if ($model->load(Yii::$app->request->post()) && $modelUserProfile->load(Yii::$app->request->post())) {
+            $valid = $model->validate();
+            $valid = $valid && $modelUserProfile->validate();
+               if($valid)
+               {
+                   $model->save(false);
+                  // print_r($model); exit('12');
+                   $modelUserProfile->save(false);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+               }
+             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('update', [
+            return $this->render('update-profile', [
                 'model' => $model,
+                'modelUserProfile' =>$modelUserProfile,
             ]);
         }
     }

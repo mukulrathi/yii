@@ -1,5 +1,7 @@
 <?php
 use frontend\components\ShopListingImages;
+use frontend\components\ShopOffers;
+
 use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\widgets\Pjax;
@@ -56,53 +58,41 @@ use yii\helpers\Html;
                </div>
             </div>
         </section>
-
-       <section class="latest-offer">
-           <div class="inner-latest-offer">
-               <div class="heading">
-               <h2><span>Special Offers</span></h2>
-               </div>
-
-               <div class="col-md-12 offers-list">
-              
-               <div class="col-sm-3 border-offers">
-                   <div id="diamond" class="list-offers-show">
-                      <h3>offer on perticular item</h3>
-                      <h4><span>10%</span> off</h4>
-                   </div>
-               </div>
-
-               <div class="col-sm-3 border-offers">
-                 <div id="diamond" class="list-offers-show">
-                    <h3>offer on perticular item</h3>
-                      <h4><span>20%</span> off</h4>
-                 </div>
-               </div>
-
-               <div class="col-sm-3 border-offers">
-                 <div id="diamond" class="list-offers-show">
-                    <h3>offer on perticular item</h3>
-                    <h4><span>30%</span> off</h4>
-                 </div>
-               </div>
-
-               <div class="col-sm-3 border-offers">
-                 <div id="diamond" class="list-offers-show">
-                    <h3>offer on perticular item</h3>
-                    <h4><span>15%</span> off</h4>
-                 </div>
-               </div>
-
-               </div>
-               </div>
-       </section>
-
+    <?= ShopOffers::widget(['shop_id' => $model->id]) ?>
    <!-- map section -->
 
    <section class="mapsection">
             <h2>Get In Touch</h2>
             <div class="divider-header"></div>
-            <div id="map"></div>
+            <div id="map">
+<?php
+                echo yii2mod\google\maps\markers\GoogleMaps::widget([
+                'userLocations' => [
+                [
+                'location' => [
+                'address' => $model->userShopAddress->address,
+                 'city'   =>$model->userShopAddress->city,
+                  'state' =>$model->userShopAddress->state,
+                    'postal_code' =>$model->userShopAddress->postal_code,
+
+
+                    'country' => $model->userShopAddress->country,
+                ],
+                'htmlContent' => '<h1>'. $model->shop_name .'</h1>',
+                ],
+                ],
+                    'googleMapsUrlOptions' => [
+                        'key' => 'AIzaSyCqs1ZJKD3E2ycq-m2GZaLV5WPfT7GJTis',
+                        ],
+                    'googleMapsOptions' => [
+                        'mapTypeId' => 'roadmap',
+                        'tilt' => 45,
+                        'zoom' => 5,
+                    ],
+                ]);
+                ?>
+
+            </div>
    </section>
 
 <!-- ends map section -->
@@ -133,7 +123,7 @@ use yii\helpers\Html;
                         </div>
                         <div class="contact-details">
                             <h4> Contact No:</h4>
-                            <h5><?// $model->user->userProfile->mobile ?></h5>
+                            <h5><?=  $model->user->userProfile->mobile ?></h5>
                         </div>
                     </div>
                 </div>
