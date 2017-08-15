@@ -13,7 +13,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-
+use backend\modules\user\models\search\UserShop as UserShopSearch;
 /**
  * Site controller
  */
@@ -75,6 +75,19 @@ class SiteController extends Controller
     {
       return $this->render('index');
     }
+
+    public function actionSearchShop()
+    {
+        $searchModel = new UserShopSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider->sort = false;
+
+        return $this->render('search-shop', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
 
     /**
      * Logs in a user.

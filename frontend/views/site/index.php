@@ -1,5 +1,6 @@
 <?php
 use frontend\components\ShopListing;
+use frontend\components\NewShopOffers;
 
 ?>
 <main role="main">
@@ -16,37 +17,6 @@ use frontend\components\ShopListing;
     </section>
     <!-- slider ends here -->
     <section id="" class="shop">
-    <!--        <div class="container">-->
-    <!--            <div class="row">-->
-    <!--                <div class="col-md-offset-2 col-md-10 col-sm-offset-1 col-sm-11">-->
-    <!--                    <form method="post" action="#" class="form-inline">-->
-    <!--                        <div id="wapper">-->
-    <!--                            <div class="style1">-->
-    <!--                                <select class="select">-->
-    <!--                                    <option value="0" selected="">Choose One City</option>-->
-    <!--                                    <option value="2">Nagpur</option>-->
-    <!--                                    <option value="3">Mumbai </option>-->
-    <!--                                    <option value="4">Pune</option>-->
-    <!---->
-    <!--                                </select>-->
-    <!---->
-    <!--                                <select class="select">-->
-    <!--                                    <option value="0" selected="">Shop Category</option>-->
-    <!--                                    <option value="0">First</option>-->
-    <!--                                    <option value="2">Second</option>-->
-    <!--                                    <option value="3">Third</option>-->
-    <!--                                    <option value="4">Fifth</option>-->
-    <!--                                    <option value="5">sixth</option>-->
-    <!--                                    <option value="6">seventh</option>-->
-    <!--                                </select>-->
-    <!--                                <button type="submit" class="filter">Filter</button>-->
-    <!--                            </div>-->
-    <!--                            <div id="event-change"></div>-->
-    <!--                        </div>-->
-    <!--                    </form>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
 
 <?php  echo  ShopListing::widget() ?>
 
@@ -64,103 +34,10 @@ use frontend\components\ShopListing;
             <div class="col-xs-12 colmdpadding">
                 <div class="carousel slide" id="myCarousel">
                     <div class="carousel-inner">
-                        <div class="item  offer-item active">
-                            <ul class="thumbnails">
-                                <li class="col-sm-2 thumb-gallery">
-                                    <div class="fff">
-                                        <div class="thumbnail">
-                                            <div class="offer popular"><span>Offer</span>                                               </div>
-                                            <a href="#"><img src="img/shop.jpg" alt="offer shop">
-                                            </a>
-                                        </div>
-                                        <div class="caption">
-                                            <h4>Praesent commodo</h4>
-                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
-                                            <a class="btn btn-mini" href="#">» Read More</a>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php  echo  NewShopOffers::widget() ?>
 
-                                <li class="col-sm-2 thumb-gallery">
-                                    <div class="fff">
-                                        <div class="thumbnail">
-                                            <div class="offer popular"><span>Offer</span>
-                                            </div>
-                                            <a href="#"><img src="img/shop.jpg" alt="offer shop">
-                                            </a>
-                                        </div>
-                                        <div class="caption">
-                                            <h4>Praesent commodo</h4>
-                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
-                                            <a class="btn btn-mini" href="#">» Read More</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-sm-2 thumb-gallery">
-                                    <div class="fff">
-                                        <div class="thumbnail">
-                                            <div class="offer popular"><span>Offer</span>
-                                            </div>
-                                            <a href="#"><img src="img/shop.jpg" alt="offer shop">
-                                            </a>
-                                        </div>
-                                        <div class="caption">
-                                            <h4>Praesent commodo</h4>
-                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
-                                            <a class="btn btn-mini" href="#">» Read More</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="col-sm-2 thumb-gallery">
-                                    <div class="fff">
-                                        <div class="thumbnail">
-                                            <div class="offer popular"><span>Offer</span>
-                                            </div>
-                                            <a href="#"><img src="img/shop.jpg" alt="offer shop">
-                                            </a>
-                                        </div>
-                                        <div class="caption">
-                                            <h4>Praesent commodo</h4>
-                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
-                                            <a class="btn btn-mini" href="#">» Read More</a>
-                                        </div>
-                                    </div>
-                                </li>
 
-                                <li class="col-sm-2 thumb-gallery">
-                                    <div class="fff">
-                                        <div class="thumbnail">
-                                            <div class="offer popular"><span>Offer</span>
-                                            </div>
-                                            <a href="#"><img src="img/shop.jpg" alt="offer shop">
-                                            </a>
-                                        </div>
-                                        <div class="caption">
-                                            <h4>Praesent commodo</h4>
-                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
-                                            <a class="btn btn-mini" href="#">» Read More</a>
-                                        </div>
-                                    </div>
-                                </li>
 
-                                <li class="col-sm-2 thumb-gallery">
-                                    <div class="fff">
-                                        <div class="thumbnail">
-                                            <div class="offer popular"><span>Offer</span>
-                                            </div>
-                                            <a href="#"><img src="img/shop.jpg" alt="offer shop">
-                                            </a>
-                                        </div>
-                                        <div class="caption">
-                                            <h4>Praesent commodo</h4>
-                                            <p>Nullam Condimentum Nibh Etiam Sem</p>
-                                            <a class="btn btn-mini" href="#">» Read More</a>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
                         <!-- /Slide1 -->
                         <div class="item offer-item">
                             <ul class="thumbnails">

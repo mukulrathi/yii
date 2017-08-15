@@ -28,7 +28,7 @@ use yii\helpers\Url;
 <!--                <div><img u="image" src="image2.jpg" /></div>-->
 
             <div >
-                <?= EasyThumbnailImage::thumbnailImg($out->file->path, 370, 250, EasyThumbnailImage::THUMBNAIL_OUTBOUND)?>
+                <?= EasyThumbnailImage::thumbnailImg($out->file->path, 550, 300, EasyThumbnailImage::THUMBNAIL_OUTBOUND)?>
 
                 <h4 class="slider-single-title">shop image</h4>
             </div>

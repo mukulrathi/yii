@@ -40,7 +40,7 @@ class UserShop extends \yii\db\ActiveRecord
     {
         return [
             [[ 'shop_name', 'shop_category_id', 'start_time', 'end_time'], 'required'],
-            [['user_id', 'shop_category_id', 'start_time', 'end_time', 'created_at', 'updated_at'], 'integer'],
+            [['user_id', 'shop_category_id', 'start_time', 'end_time','order_status', 'created_at', 'updated_at'], 'integer'],
             [['shop_name'], 'string', 'max' => 255],
             [['deescription'], 'string'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
@@ -59,6 +59,7 @@ class UserShop extends \yii\db\ActiveRecord
             'shop_category_id' => 'Shop Category ID',
             'start_time' => 'Start Time',
             'end_time' => 'End Time',
+            'order_status' => 'Order Status',
             'deescription' => 'Description',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',

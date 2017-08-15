@@ -1,6 +1,7 @@
 <?php
 use frontend\components\ShopListingImages;
 use frontend\components\ShopOffers;
+use backend\modules\user\models\UserShopCategory;
 
 use yii\helpers\Url;
 use yii\widgets\ListView;
@@ -32,26 +33,13 @@ use yii\helpers\Html;
                             <div class="divider-header-sub"></div>
                             <div class="about-shop">
                                 <ul>
-                                    <li><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                          tempor incididunt ut labore et dolore magna aliqua.</span>
+                                    <li><span>Category: <?php $title = UserShopCategory::findOne([['id' =>$model->shop_category_id]]);
+                                          echo ($title->category_name); ?>
+                                    <li><span>Shop Timing :- <?= $model->start_time. ' To '. $model->end_time ?>
+                                    <li><span>Description
+                                          <?= $model->deescription ?></span>
                                     </li>
-                                    <li><span>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                          consequat.</span> </li>
-                                    <li><span>Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                          cillum dolore eu fugiat nulla pariatur. </span>
-                                    </li>
-                                    <li><span>Excepteur sint occaecat cupidatat non
-                                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-                                    </li>
-
-                                    <li><span>Excepteur sint occaecat cupidatat non
-                                          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-                                    </li>
-
-                                    <li><span>Excepteur sint occaecat cupidatat non
-                                         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-                                    </li>
-                                </ul>
+ </ul>
                             </div>
                         </div>
                      </div>
