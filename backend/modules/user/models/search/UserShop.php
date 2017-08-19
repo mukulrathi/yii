@@ -66,9 +66,9 @@ class UserShop extends BackendUserShop
 //            'user_shop.status' => 'Active',
 //        ]);
         //pr($query);
-        $query->andFilterWhere(['like', 'title', $this->q])
+        $query->andFilterWhere(['like', 'shop_name', $this->q])
 
-            ->orFilterWhere(['like', 'description', $this->q])
+            ->orFilterWhere(['like', 'deescription', $this->q])
             ->andFilterWhere(['or',
                 ['like', 'userShopAddress.address_line', $this->location],
                 ['like', 'userShopAddress.city', $this->city],

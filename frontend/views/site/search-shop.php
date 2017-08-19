@@ -5,11 +5,13 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\ListView;
 use yii\widgets\Pjax;
-
+use yii\bootstrap\ActiveForm;
+ use yii\helpers\Url;
 
 $this->title = 'Shops';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <section class="main-content">
     <div class="container">
         <div class="row">
@@ -17,6 +19,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h1 style="margin-bottom: 20px; margin-top: 0px;"><?= $this->title ?></h1>
             </div>
         </div>
+        <?php $form = ActiveForm::begin([
+            'method' => 'get',
+            'action' => Url::to(['/site/search-shop/'], true),
+        ]); ?>
+        <?= $form->field($searchModel, 'q')->textInput()->label(false); ?>
+        <?php ActiveForm::end(); ?>
+
         <div class="row shop-listing">
              <div class="col-md-6 col-xs-12 pull-left">
                 <?=
