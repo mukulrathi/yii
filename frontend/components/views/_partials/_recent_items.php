@@ -8,9 +8,7 @@
 use himiklab\thumbnail\EasyThumbnailImage;
 use yii\helpers\Url;
 ?>
-<?php
-//print_r($model->userShopFileMappings);
-?>
+  
 
 <div class="shop-container">
 

@@ -11,36 +11,31 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Shops';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
+<section id="" class="shop-entry">
+    <div class="shop-entry-detail">
+        <h1>Search Results</h1>
+        <div class="divider-header"></div>
+    </div>
+</section>
 <section class="main-content">
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <h1 style="margin-bottom: 20px; margin-top: 0px;"><?= $this->title ?></h1>
-            </div>
-        </div>
-        <?php $form = ActiveForm::begin([
-            'method' => 'get',
-            'action' => Url::to(['/site/search-shop/'], true),
-        ]); ?>
-        <?= $form->field($searchModel, 'q')->textInput()->label(false); ?>
-        <?php ActiveForm::end(); ?>
-
-        <div class="row shop-listing">
-             <div class="col-md-6 col-xs-12 pull-left">
+    <div class="row shop-listing" style="padding:10px">
+             <div class="col-xs-8">
                 <?=
                 ListView::widget([
                     'dataProvider' => $dataProvider,
                       'itemOptions' => [
-                        'class' => 'col-md-3 col-sm-6 main-shop-side wow zoomIn'
+                        'class' => 'col-md-5 col-sm-3 main-shop-side wow zoomIn'
                     ],
                     'summary' => false,
+                    'emptyText'=>$this->render('noshop'),
                     'itemView' => function ($model, $key, $index, $widget) {
-                        return $this->render('_partials/_shop_search', ['model' => $model]);
+                      return $this->render('_partials/_shop_search', ['model' => $model]);
                     },
                 ]);
                 ?>
             </div>
+
         </div>
     </div>
 </section>

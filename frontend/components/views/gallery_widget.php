@@ -23,11 +23,7 @@ use yii\helpers\Url;
     <!-- Slides Container -->
     <?php if (count($images) > 0) {
         foreach($images as $out):?>
-
-<!--                <div><img u="image" src="image1.jpg" /></div>-->
-<!--                <div><img u="image" src="image2.jpg" /></div>-->
-
-            <div >
+               <div >
                 <?= EasyThumbnailImage::thumbnailImg($out->file->path, 550, 300, EasyThumbnailImage::THUMBNAIL_OUTBOUND)?>
 
                 <h4 class="slider-single-title">shop image</h4>
@@ -46,5 +42,3 @@ use yii\helpers\Url;
     <script>jssor_slider1_init('slider1_container');</script>
 
 </div>
-
-

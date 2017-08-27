@@ -12,20 +12,18 @@ use yii\widgets\ListView;
 use yii\widgets\Pjax;
 
 ?>
-
+<div class="heading">
+    <h3>Offers Listing</h3>
+    <div class="divider-header"></div>
+</div>
 
 <div class="item offer-item">
     <ul class="thumbnails">
-   </ul></div>
+
 <?=
 ListView::widget([
     'dataProvider' => $dataProvider,
-//        'options' => [
-//            'tag' => 'div',
-//            'class' => 'row12',
-//            'id' => 'list-wrapper',
-//        ],
-    'summary' => false,
+      'summary' => false,
     'itemView' => function ($model, $key, $index, $widget) {
         return $this->render('_partials/_shops_recent_items', ['model' => $model]);
     },

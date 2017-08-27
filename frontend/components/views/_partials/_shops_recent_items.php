@@ -27,4 +27,3 @@ use yii\helpers\Url;
         </div>
     </div>
 </li>
-

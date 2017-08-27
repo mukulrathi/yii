@@ -14,10 +14,11 @@ use yii\widgets\Pjax;
 ?>
 
 <div class="row">
-    <div class="col-xs-12">
-        <h2>Shops Lising</h2>
-    </div>
-    <?php Pjax::begin(['id' => 'listing-grid-container'])?>
+  <div class="heading">
+      <h3>Shop Listing</h3>
+      <div class="divider-header"></div>
+  </div>
+  <?php Pjax::begin(['id' => 'listing-grid-container'])?>
     <?=
     ListView::widget([
         'dataProvider' => $dataProvider,
