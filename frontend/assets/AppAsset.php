@@ -24,7 +24,6 @@ class AppAsset extends AssetBundle
 
     ];
     public $js = [
-        'js/bootstrapMaterialDesign.js',
         'js/material.min.js',
         'js/slick.min.js',
         'js/all.js',

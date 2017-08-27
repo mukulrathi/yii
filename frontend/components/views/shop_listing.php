@@ -10,7 +10,8 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\widgets\Pjax;
-
+use backend\Modules\user\models\UserShopCategory;
+use yii\helpers\ArrayHelper;
 ?>
 
 <div class="row">
@@ -18,6 +19,16 @@ use yii\widgets\Pjax;
       <h3>Shop Listing</h3>
       <div class="divider-header"></div>
   </div>
+<?php
+$cat  = UserShopCategory::find()->all();
+//$list = ArrayHelper::map($cat,'id','name',['prompt'=>'Select shop Category']);
+$form = ActiveForm::begin();
+//echo $form->
+
+ActiveForm::end();
+ ?>
+
+
   <?php Pjax::begin(['id' => 'listing-grid-container'])?>
     <?=
     ListView::widget([
@@ -38,3 +49,14 @@ use yii\widgets\Pjax;
     ?>
     <?php Pjax::end()?>
 </div>
+
+<?php
+$js = <<<JS
+$("#cat").on('change',function()
+{
+  var value = $(this).val();
+  alert(value);
+});
+JS;
+$this->registerJS($js);
+?>

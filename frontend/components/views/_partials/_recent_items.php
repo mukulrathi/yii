@@ -8,7 +8,6 @@
 use himiklab\thumbnail\EasyThumbnailImage;
 use yii\helpers\Url;
 ?>
-  
 
 <div class="shop-container">
 

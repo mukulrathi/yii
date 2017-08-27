@@ -13,7 +13,7 @@ use yii\widgets\Pjax;
 
 ?>
 <div class="heading">
-    <h3>Offers Listing</h3>
+    <h3>Offers</h3>
     <div class="divider-header"></div>
 </div>
 
