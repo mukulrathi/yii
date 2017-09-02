@@ -19,17 +19,31 @@ $this->params['breadcrumbs'][] = $this->title;
 
    <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+    
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
             'shop_name',
-            'shop_category_id',
-            'start_time:datetime',
-             'end_time:datetime',
-            // 'deescription:ntext',
-            // 'created_at',
-            // 'updated_at',
+             [
+            'label' => 'address',
+            'attribute' => 'userShopAddress.address'
+             ],
+            [
+           
+            'label' => 'city',
+            'attribute' => 'userShopAddress.city'
+             ],
+             [
+              'label' => 'pincode',
+            'attribute' => 'userShopAddress.postal_code'
+             ],
+             ['label' => 'ownerName',
+            'attribute' => 'user.userProfile.first_name'
+             ],
+                   
+       
 
             ['class' => 'yii\grid\ActionColumn',
                     'buttons' => [

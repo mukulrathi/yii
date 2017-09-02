@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use backend\modules\user\models\search\UserShopCategory as UserShopCategorySearch;
 use yii\db\ActiveRecord;
 
 
@@ -38,16 +38,15 @@ class UserShopCategoryController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => UserShopCategory::find(),
-        ]);
+        $searchModel = new UserShopCategorySearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-        ]);
+      ]);
     }
-
-    /**
+    /*
      * Displays a single UserShopCategory model.
      * @param integer $id
      * @return mixed

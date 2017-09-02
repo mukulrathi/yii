@@ -10,6 +10,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use backend\modules\user\models\search\UserShop as UserShopSearch;
 
 
 /**
@@ -38,16 +39,18 @@ class UserShopController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => UserShop::find(),
-        ]);
+        $searchModel = new UserShopSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-        ]);
-    }
+       ]);
+}   
 
     /**
+    }
+        /*
      * Displays a single UserShop model.
      * @param integer $id
      * @return mixed

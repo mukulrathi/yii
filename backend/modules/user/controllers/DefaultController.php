@@ -12,6 +12,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use backend\modules\user\models\search\User as UserSearch;
 
 
 /**
@@ -40,15 +41,16 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => User::find(),
-        ]);
+
+        $searchModel = new UserSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-        ]);
+       
+       ]);
     }
-
     /**
      * Displays a single User model.
      * @param integer $id

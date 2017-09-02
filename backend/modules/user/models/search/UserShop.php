@@ -12,7 +12,8 @@ use yii\db\Expression;
 class UserShop extends BackendUserShop
 {
     public $q;
-    public $location;
+    public $shop_name;
+    public $address;
     public $city;
     public $state;
     public $country;
@@ -25,8 +26,7 @@ class UserShop extends BackendUserShop
     public function rules()
     {
         return [
-            [['distance'], 'integer'],
-            [['q', 'city', 'location', 'state', 'country', 'latitude', 'longitude', 'distance_array'], 'safe'],
+            [['q', 'city', 'address', 'state', 'country', 'latitude', 'longitude', 'distance_array' ,'shop_name'], 'safe'],
         ];
     }
 
@@ -66,17 +66,18 @@ class UserShop extends BackendUserShop
 //            'user_shop.status' => 'Active',
 //        ]);
         //pr($query);
-        $query->andFilterWhere(['like', 'shop_name', $this->q])
+        $query->andFilterWhere(['like', 'shop_name', $this->shop_name])
 
             ->orFilterWhere(['like', 'deescription', $this->q])
             ->andFilterWhere(['or',
-                ['like', 'userShopAddress.address_line', $this->location],
+                ['like', 'userShopAddress.address', $this->address],
                 ['like', 'userShopAddress.city', $this->city],
                 ['like', 'userShopAddress.state', $this->state],
                 ['like', 'userShopAddress.country', $this->country]
             ]);
+    
 
-        $query->andFilterWhere(['user_id' => $this->user_id]);
+//        $query->andFilterWhere(['userShopAddress.address_line' => $this->address]);
 
 //        if(!empty($this->location)) {
 //

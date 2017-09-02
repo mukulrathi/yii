@@ -8,6 +8,8 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\modules\user\models\search\UserShopOrders as UserShopOrderSearch;
+
 
 /**
  * UserShopOrdersController implements the CRUD actions for UserShopOrders model.
@@ -35,14 +37,17 @@ class UserShopOrdersController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => UserShopOrders::find(),
-        ]);
+        $searchModel = new UserShopOrderSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-        ]);
+       ]);
+        
     }
+
+    
 
     /**
      * Displays a single UserShopOrders model.
