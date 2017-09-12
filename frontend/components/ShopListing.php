@@ -15,14 +15,16 @@ class ShopListing extends \yii\base\Widget
     {
         public function run()
     {
-        $dataProvider = new ActiveDataProvider([
+         $model = new UserShop();
+         $dataProvider = new ActiveDataProvider([
             'query' => UserShop::find()->orderBy('created_at DESC'),
             'pagination' => [
                 'pageSize' => 10,
             ],
         ]);
         return $this->render('shop_listing', [
-            'dataProvider' => $dataProvider
+            'dataProvider' => $dataProvider,
+             'model'        =>$model
         ]);
 
 

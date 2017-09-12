@@ -22,7 +22,7 @@
 // });
 // ends here
 // select button
-
+ 
      (function ( $ ) {
   var elActive = '';
     $.fn.selectCF = function( options ) {

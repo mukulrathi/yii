@@ -10,7 +10,7 @@ use yii\helpers\Url;
 
 ?>
 
-<li class="col-sm-2 thumb-gallery">
+<li class="item col-sm-2 thumb-gallery">
     <div class="fff">
         <div class="thumbnail">
             <div class="offer popular"><span>Offer</span>
@@ -27,3 +27,5 @@ use yii\helpers\Url;
         </div>
     </div>
 </li>
+
+
