@@ -12,9 +12,12 @@ use yii\widgets\ListView;
 use yii\widgets\Pjax;
 use backend\Modules\user\models\UserShopCategory;
 use yii\helpers\ArrayHelper;
+use yii\widgets\ActiveForm;
+
 ?>
 
 <div class="row">
+<<<<<<< HEAD
   <div class="heading">
       <h3>Shop Listing</h3>
       <div class="divider-header"></div>
@@ -27,9 +30,41 @@ use yii\helpers\ArrayHelper;
 
 // ActiveForm::end();
  ?>
+=======
+    <div class="heading">
+        <h3>Shop Listing</h3>
+        <div class="divider-header"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-10 col-sm-offset-1 col-sm-11">
+                <form method="post" action="#" class="form-inline">
+                    <div id="wapper">
+                        <div class="style1">
+                            <?php
+                            $cat = UserShopCategory::find()->where(['status' => '1'])->all();
+                            $list = ArrayHelper::map($cat, 'id', 'category_name');
+                            $form = ActiveForm::begin();
+                            ?>
+                            <select class="select">
+                                <option value="0" selected="">Shop Category</option>
+                                <?php foreach ($list as $key =>$value){ ?>
+                                <option value="<?= $key ?>"><?= $value ?></option>
+                                <?php } ?>
+                            </select>
+                            <button type="button" id="cat" class="filter">Filter</button>
+                        </div>
+                        <div id="event-change"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+>>>>>>> e962913a1aca0f13afef14f52466bcf29f1e1a5c
 
 
-  <?php Pjax::begin(['id' => 'listing-grid-container'])?>
+    <?php Pjax::begin(['id' => 'listing-grid-container']) ?>
     <?=
     ListView::widget([
         'dataProvider' => $dataProvider,
@@ -47,15 +82,16 @@ use yii\helpers\ArrayHelper;
         },
     ]);
     ?>
-    <?php Pjax::end()?>
+    <?php Pjax::end() ?>
 </div>
 
 <?php
 $js = <<<JS
-$("#cat").on('change',function()
+$("#cat").on('click',function()
 {
-  var value = $(this).val();
-  alert(value);
+   var select = $('.select').val();
+   
+  alert(select);
 });
 JS;
 $this->registerJS($js);

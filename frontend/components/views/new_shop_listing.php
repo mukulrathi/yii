@@ -21,7 +21,7 @@ use ckarjun\owlcarousel\OwlCarouselWidget;
     <div class="divider-header"></div>
 </div>
 
-<div class="item offer-item">
+<div class="owl-carousel item offer-item">
     <ul class="thumbnails">
 
 <?php
