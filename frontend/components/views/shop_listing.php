@@ -20,12 +20,12 @@ use yii\helpers\ArrayHelper;
       <div class="divider-header"></div>
   </div>
 <?php
-$cat  = UserShopCategory::find()->all();
-//$list = ArrayHelper::map($cat,'id','name',['prompt'=>'Select shop Category']);
-$form = ActiveForm::begin();
-//echo $form->
+// $cat  = UserShopCategory::find()->all();
+// //$list = ArrayHelper::map($cat,'id','name',['prompt'=>'Select shop Category']);
+// $form = ActiveForm::begin();
+// //echo $form->
 
-ActiveForm::end();
+// ActiveForm::end();
  ?>
 
 

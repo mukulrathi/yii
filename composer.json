@@ -34,7 +34,8 @@
        "himiklab/yii2-easy-thumbnail-image-helper" : "*",
        "bower-asset/magnific-popup": "*",
        "udokmeci/yii2-phone-validator" : "~1.0.1",
-"2amigos/yii2-date-time-picker-widget": "~1.0"
+"2amigos/yii2-date-time-picker-widget": "~1.0",
+"ckarjun/yii2-owl-carousel": "*"
     },
     "config": {
         "process-timeout": 1800,

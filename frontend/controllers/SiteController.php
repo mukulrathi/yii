@@ -73,11 +73,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $shopoffers   =  UserShop::find()->all();
         $searchModel = new UserShopSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
       return $this->render('index',[
           'searchModel' => $searchModel,
           'dataProvider' => $dataProvider,
+          'shopoffers'   =>$shopoffers,
+
       ]);
     }
 

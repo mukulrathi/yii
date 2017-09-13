@@ -10,8 +10,12 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\widgets\Pjax;
+use ckarjun\owlcarousel\OwlCarouselWidget;
 
 ?>
+
+
+
 <div class="heading">
     <h3>Offers</h3>
     <div class="divider-header"></div>
@@ -20,7 +24,23 @@ use yii\widgets\Pjax;
 <div class="item offer-item">
     <ul class="thumbnails">
 
+<?php
+OwlCarouselWidget::begin([
+    'container' => 'div',
+    'containerOptions' => [
+        'id' => 'container',
+        'class' => 'my-item-class'
+    ],
+    'pluginOptions' => [
+        'autoPlay' => 2000,
+        'items' => 10,
+        'itemsDesktop' => [1199,10],
+        'itemsDesktopSmall' => [979,10]
+    ]
+]);
+?>
 <?=
+
 ListView::widget([
     'dataProvider' => $dataProvider,
       'summary' => false,
@@ -29,5 +49,6 @@ ListView::widget([
     },
 ]);
 ?>
+<?php OwlCarouselWidget::end(); ?>
     </ul>
     </div>

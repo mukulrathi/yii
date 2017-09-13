@@ -7,9 +7,11 @@
  */
 use himiklab\thumbnail\EasyThumbnailImage;
 use yii\helpers\Url;
+use ckarjun\owlcarousel\OwlCarouselWidget;
 
 ?>
 
+<div class ="my-item-class">
 <li class="col-sm-2 thumb-gallery">
     <div class="fff">
         <div class="thumbnail">
@@ -27,3 +29,4 @@ use yii\helpers\Url;
         </div>
     </div>
 </li>
+</div>
