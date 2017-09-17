@@ -11,12 +11,15 @@ namespace frontend\components;
 use backend\modules\user\models\UserShop;
 use Yii;
 use yii\data\ActiveDataProvider;
+
+
 class ShopListing extends \yii\base\Widget
+{
+    public function run()
+
     {
-        public function run()
-    {
-         $model = new UserShop();
-         $dataProvider = new ActiveDataProvider([
+        $model = new UserShop();
+        $dataProvider = new ActiveDataProvider([
             'query' => UserShop::find()->orderBy('created_at DESC'),
             'pagination' => [
                 'pageSize' => 10,
@@ -24,9 +27,9 @@ class ShopListing extends \yii\base\Widget
         ]);
         return $this->render('shop_listing', [
             'dataProvider' => $dataProvider,
-             'model'        =>$model
+            'model' => $model
         ]);
 
 
     }
-    }
+}

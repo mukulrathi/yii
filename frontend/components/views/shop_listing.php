@@ -16,21 +16,8 @@ use yii\widgets\ActiveForm;
 
 ?>
 
-<div class="row">
-<<<<<<< HEAD
-  <div class="heading">
-      <h3>Shop Listing</h3>
-      <div class="divider-header"></div>
-  </div>
-<?php
-// $cat  = UserShopCategory::find()->all();
-// //$list = ArrayHelper::map($cat,'id','name',['prompt'=>'Select shop Category']);
-// $form = ActiveForm::begin();
-// //echo $form->
-
-// ActiveForm::end();
- ?>
-=======
+  <div class=" container">
+      
     <div class="heading">
         <h3>Shop Listing</h3>
         <div class="divider-header"></div>
@@ -38,41 +25,39 @@ use yii\widgets\ActiveForm;
 
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-4 col-md-10 col-sm-offset-1 col-sm-11">
-                <form method="post" action="#" class="form-inline">
-                    <div id="wapper">
-                        <div class="style1">
-                            <?php
-                            $cat = UserShopCategory::find()->where(['status' => '1'])->all();
-                            $list = ArrayHelper::map($cat, 'id', 'category_name');
-                            $form = ActiveForm::begin();
-                            ?>
-                            <select class="select">
-                                <option value="0" selected="">Shop Category</option>
-                                <?php foreach ($list as $key =>$value){ ?>
+                    <div class="col-md-offset-4 col-md-10 col-sm-offset-1 col-sm-11">
+                        <form method="post" action="#" class="form-inline">
+                            <div id="wapper">
+                                <div class="style1">
+                                <?php
+                                $cat = UserShopCategory::find()->where(['status' => '1'])->all();
+                                $list = ArrayHelper::map($cat, 'id', 'category_name');
+                                ?>
+                        <select class="select" name="shopsearch">
+                            <option value="0" selected="">Shop Category</option>
+                            <?php foreach ($list as $key => $value) { ?>
                                 <option value="<?= $key ?>"><?= $value ?></option>
-                                <?php } ?>
-                            </select>
-                            <button type="button" id="cat" class="filter">Filter</button>
-                        </div>
-                        <div id="event-change"></div>
+                            <?php } ?>
+                        </select>
+                        <button type="button" id="cat" class="filter">Filter</button>
                     </div>
-                </form>
-            </div>
-        </div>
+                    
+                                <div id="event-change"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+         </div>
+
+
+
     </div>
->>>>>>> e962913a1aca0f13afef14f52466bcf29f1e1a5c
 
-
+    <div class="row" id="shop">
     <?php Pjax::begin(['id' => 'listing-grid-container']) ?>
     <?=
     ListView::widget([
         'dataProvider' => $dataProvider,
-//        'options' => [
-//            'tag' => 'div',
-//            'class' => 'row12',
-//            'id' => 'list-wrapper',
-//        ],
         'itemOptions' => [
             'class' => 'col-md-3 col-sm-6 main-shop-side wow zoomIn'
         ],
@@ -84,14 +69,28 @@ use yii\widgets\ActiveForm;
     ?>
     <?php Pjax::end() ?>
 </div>
-
+ 
 <?php
+$url = Url::to(['site/shop-search'], true);
 $js = <<<JS
 $("#cat").on('click',function()
 {
    var select = $('.select').val();
-   
-  alert(select);
+  $.ajax({
+            url:'$url',
+            data:{value:select},
+            method:'POST',
+            success:function(result)
+            {
+                  $("#shop").html(result);
+            }
+
+
+
+  });
+  return false ;
+
+  
 });
 JS;
 $this->registerJS($js);

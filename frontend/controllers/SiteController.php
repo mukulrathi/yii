@@ -1,9 +1,11 @@
 <?php
+
 namespace frontend\controllers;
 
 use backend\modules\user\models\UserShop;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\data\ActiveDataProvider;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -14,6 +16,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use backend\modules\user\models\search\UserShop as UserShopSearch;
+
 /**
  * Site controller
  */
@@ -73,20 +76,20 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $shopoffers   =  UserShop::find()->all();
+        $shopoffers = UserShop::find()->all();
         $searchModel = new UserShopSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-      return $this->render('index',[
-          'searchModel' => $searchModel,
-          'dataProvider' => $dataProvider,
-          'shopoffers'   =>$shopoffers,
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'shopoffers' => $shopoffers,
 
-      ]);
+        ]);
     }
 
     public function actionSearchShop()
     {
-      //$this->layout ='header';
+        //$this->layout ='header';
         $searchModel = new UserShopSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider->sort = false;
@@ -131,6 +134,15 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    public function actionShopSearch()
+    {
+        $value = $_POST['value'];
+        $dataProvider = new ActiveDataProvider([
+            'query' =>  UserShop::find()->where(['shop_category_id'=>$value])
+        ]);
+        return $this->renderAjax('shop_search',['dataProvider' => $dataProvider]);
+    }
+
     /**
      * Displays contact page.
      *
@@ -166,9 +178,9 @@ class SiteController extends Controller
 
     public function actionViewShop($id)
     {
-        $model = UserShop::find()->where(['id'=>$id])->one();
-        return $this->render('details',[
-            'model'=>$model
+        $model = UserShop::find()->where(['id' => $id])->one();
+        return $this->render('details', [
+            'model' => $model
         ]);
     }
 

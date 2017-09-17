@@ -7,16 +7,10 @@
  */
 use himiklab\thumbnail\EasyThumbnailImage;
 use yii\helpers\Url;
-use ckarjun\owlcarousel\OwlCarouselWidget;
 
 ?>
 
-<<<<<<< HEAD
-<div class ="my-item-class">
-<li class="col-sm-2 thumb-gallery">
-=======
 <li class="item col-sm-2 thumb-gallery">
->>>>>>> e962913a1aca0f13afef14f52466bcf29f1e1a5c
     <div class="fff">
         <div class="thumbnail">
             <div class="offer popular"><span>Offer</span>
@@ -33,9 +27,6 @@ use ckarjun\owlcarousel\OwlCarouselWidget;
         </div>
     </div>
 </li>
-<<<<<<< HEAD
-</div>
-=======
 
 
->>>>>>> e962913a1aca0f13afef14f52466bcf29f1e1a5c
+
