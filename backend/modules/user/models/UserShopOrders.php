@@ -13,7 +13,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $orders
  * @property integer $created_at
  * @property integer $updated_at
- *
+    * @property string $amount 
  * @property UserShop $shop
  */
 class UserShopOrders extends \yii\db\ActiveRecord
@@ -32,9 +32,9 @@ class UserShopOrders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['shop_id'], 'required'],
+            [['shop_id','amount'], 'required'],
             [['shop_id', 'created_at', 'updated_at'], 'integer'],
-            [['orders'], 'string', 'max' => 255],
+            [['orders','amount'], 'string', 'max' => 255],
             [['shop_id'], 'exist', 'skipOnError' => true, 'targetClass' => UserShop::className(), 'targetAttribute' => ['shop_id' => 'id']],
         ];
     }
@@ -50,6 +50,7 @@ class UserShopOrders extends \yii\db\ActiveRecord
             'orders' => 'Orders',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'amount' => 'Amount', 
         ];
     }
     public function behaviors()

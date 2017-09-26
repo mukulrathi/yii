@@ -8,7 +8,7 @@
 
 namespace frontend\components;
 
-use backend\modules\user\models\UserShop;
+use backend\modules\user\models\UserShopOrders;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\base\Widget;
@@ -20,8 +20,8 @@ class ShopOffers extends Widget
     public function run()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => UserShop::find()->where(['id' =>$this->shop_id]),
-            'pagination' => false
+            'query' => UserShopOrders::find()->where(['shop_id' =>$this->shop_id]),
+                        'pagination' => false
         ]);
         return $this->render('order_widget', [
             'dataProvider' => $dataProvider

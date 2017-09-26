@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use backend\modules\user\models\Comment;
 use backend\modules\user\models\UserShop;
 use Yii;
 use yii\base\InvalidParamException;
@@ -16,6 +17,9 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use backend\modules\user\models\search\UserShop as UserShopSearch;
+use yii\web\HttpException;
+use yii\web\NotFoundHttpException;
+use yii\web\Response;
 
 /**
  * Site controller
@@ -178,9 +182,11 @@ class SiteController extends Controller
 
     public function actionViewShop($id)
     {
+        $comment = new Comment();
         $model = UserShop::find()->where(['id' => $id])->one();
         return $this->render('details', [
-            'model' => $model
+            'model' => $model,
+            'comment' =>$comment
         ]);
     }
 
@@ -227,6 +233,41 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+        public function actionWriteReview($id)
+    {
+        $model = new Comment();
+
+        if ($model->load(\Yii::$app->request->post())) {
+
+            try {
+                    $model->shop_id = $id;
+                if ($model->save(false)) {
+
+                    Yii::$app->response->format = Response::FORMAT_JSON;
+                    return [
+                        'flag' => true,
+                        'message' => 'Your rating and review are saved successfully.'
+                    ];
+                } else {
+                    Yii::$app->response->format = Response::FORMAT_JSON;
+                    return [
+                        'flag' => false,
+                        'errors' => $model->errors
+                    ];
+                }
+            } catch (\Exception $exception) {
+                return [
+                    'flag' => false,
+                    'message' => 'Invalid listing.'
+                ];
+            }
+        }
+
+    }
+
+
+
 
     /**
      * Resets password.

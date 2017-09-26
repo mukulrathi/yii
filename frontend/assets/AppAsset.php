@@ -25,6 +25,7 @@ class AppAsset extends AssetBundle
         'js/all.js',
         'https://maps.googleapis.com/maps/api/js?key=AIzaSyB9CdZk3plxvoOJQEt_FT4ZOZ86rFRxTxw&amp;libraries=places&amp;callback=initAutocomplete',
         'js/custome.js',
+         'js/notify.min.js',
 
     ];
     public $depends = [

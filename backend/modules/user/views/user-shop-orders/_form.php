@@ -18,6 +18,7 @@ use backend\modules\user\models\UserShop;
     ?>
     <?= $form->field($model, 'shop_id')->dropDownList($shopname,['Select shop Name'])->label('select shop name'); ?>
     <?= $form->field($model, 'orders')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'amount')->textInput(['maxlength' => true]) ?>
 
 
     <div class="form-group">
