@@ -7,7 +7,7 @@
     <section class="mapsection">
      
     <div class="container" style="height:100px">
-  <p align ="center"; style="padding:5px">Currently that shop is not listed, Sorry for the inconvience</p>
+  <p align ="center"; style="padding:5px">Currently that shop is not listed,<br> Sorry for the inconvience</p>
   <div class="divider-header"></div>
 </div>
 </section>

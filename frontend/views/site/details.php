@@ -147,7 +147,7 @@ use kartik\rating\StarRating;
   padding: 30px 30px 20px;
   border-bottom: 2px solid white;
   overflow-y: scroll;
-  height: 575px;
+  height:auto;
 }
 .chat .chat-history .message-data {
   margin-bottom: 15px;
@@ -387,27 +387,48 @@ li{
 
         </div>
     </section>
-    
+
 <div id="review-grid-container">
  <div class="container-chat clearfix">
     <div class="chat">
       <div class="chat-history">
         <ul>
             <?php
+
             $modelc = \backend\modules\user\models\Comment::find()->where(['shop_id' =>$model->id])->all();
-             ?>
-             <?php
-             foreach ($modelc as $key) {?>
-            <li class="clearfix">
-            <div class="message-data align-right">
-              <span class="message-data-time" >10:10 AM, Today</span> &nbsp; &nbsp;
-              <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
-            </div>
-            <div class="message other-message float-right">
-              Hi Vincent, how are you? How is the project coming along?
-            </div>
-          </li>
-           <?php } ?>
+               $sum = \backend\modules\user\models\Comment::find()->where(['shop_id' => $model->id])->sum('rating');
+                            $count = \backend\modules\user\models\Comment::find()->where(['shop_id' => $model->id])->count();
+                            $rate = ($count == 0) ? 0 : $sum / ($count);
+                            echo StarRating::widget([
+                                'name' => 'rating_2',
+                                'value' => $rate,
+                                'disabled' => false,
+                                'pluginOptions' => [
+                                    'displayOnly' => true,
+                                    'filledStar' => '<i class="fa fa-star"></i>',
+                                    'emptyStar' => '<i class="fa fa-star-o"></i>',
+                                    'size' => 'xs',
+                                ]
+                            ]);
+                             
+                if(!empty($modelc)) {
+                    ?>
+                    <?php
+                    foreach ($modelc as $key) { ?>
+                        <li class="clearfix">
+                            <div class="message-data align-right">
+                                <span class="message-data-time">10:10 AM, Today</span> &nbsp; &nbsp;
+                                <span class="message-data-name">Olia</span> <i class="fa fa-circle me"></i>
+                            </div>
+                            <div class="message other-message float-right">
+                                Hi Vincent, how are you? How is the project coming along?
+                            </div>
+                        </li>
+                    <?php }
+                }
+                else{
+                    echo "<li> No Comment found for these Shop </li>";
+                }?>
           </ul>
       </div>
   </div>
@@ -419,13 +440,13 @@ li{
             'id' => 'form-review-rating',
              'action' => '/site/write-review?id='.$model->id,
         ]);
-        
+
         ?>
 
         <?= $form->field($comment, 'username')->textInput() ?>
 
         <?= $form->field($comment, 'comment')->textArea() ?>
-        <?php 
+        <?php
         $pluginOptions = [
         'theme' => 'krajee-fa',
         'filledStar' => '<i class="fa fa-star" aria-hidden="true"></i>',

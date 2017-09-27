@@ -18,8 +18,6 @@ use yii\widgets\Pjax;
         <h2 align="center"><span>Special Offers</span></h2>
     </div>
 
-<div class="container">
-<div class="col-md-12 offers-list">
     <?=
     ListView::widget([
         'dataProvider' => $dataProvider,
@@ -29,7 +27,7 @@ use yii\widgets\Pjax;
 //            'id' => 'list-wrapper',
 //        ],
         'itemOptions' => [
-            'class' => 'col-sm-4'
+            'class' => 'col-sm-2'
         ],
         'emptyText'=>$this->render('no_offers'), 'summary' => false,
         'itemView' => function ($model, $key, $index, $widget) {
@@ -38,6 +36,4 @@ use yii\widgets\Pjax;
     ]);
     ?>
 
-</div>
-</div>
 </section>
