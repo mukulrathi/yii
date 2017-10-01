@@ -13,11 +13,13 @@ use yii\widgets\Pjax;
 
 ?>
 
-
+<section class="valid-offer">
 <div class="heading">
     <h3>Offers</h3>
     <div class="divider-header"></div>
 </div>
+ <div class="valid-offer-inner" style="width: 100%">
+               
 <div class="col-xs-12 colmdpadding">
     <div class="item  offer-item active">
         <ul class="thumbnails">
@@ -35,3 +37,5 @@ use yii\widgets\Pjax;
         </ul>
     </div>
 </div>
+</div>
+</section>

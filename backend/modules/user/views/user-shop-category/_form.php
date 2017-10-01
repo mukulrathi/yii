@@ -28,21 +28,6 @@ use yii\widgets\ActiveForm;
               <div class="box-footer">
        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>          </div>
               <!-- /.box-footer -->
-            </form>
-          </div>
-<!-- <div class="user-shop-category-form">
+            <?php ActiveForm::end(); ?>
+</div>
 
-
-    <div class="col-sm-5">
-        <?= $form->field($model, 'category_name')->textInput(['maxlength' => true])->hint('Name can be e.g medical,kirana store ') ?>
-    </div>
-    <div class="col-sm-5">
-    </div>
-
-    <div class="col-sm-2">
-
-    </div>
-
-    <?php ActiveForm::end(); ?>
-
-</div> -->

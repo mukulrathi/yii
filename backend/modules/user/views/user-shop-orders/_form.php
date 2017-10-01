@@ -17,7 +17,7 @@ use backend\modules\user\models\UserShop;
     $shopname = \yii\helpers\ArrayHelper::map($shop,'id','shop_name');
     ?>
     <?= $form->field($model, 'shop_id')->dropDownList($shopname,['Select shop Name'])->label('select shop name'); ?>
-    <?= $form->field($model, 'orders')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'orders')->textInput(['maxlength' => true])->label('Offers details') ?>
         <?= $form->field($model, 'amount')->textInput(['maxlength' => true]) ?>
 
 

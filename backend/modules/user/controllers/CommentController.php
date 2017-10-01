@@ -1,18 +1,18 @@
 <?php
+
 namespace backend\modules\user\controllers;
+
 use Yii;
-use backend\modules\user\models\UserShopOrders;
+use backend\modules\user\models\Comment;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use backend\modules\user\models\search\UserShopOrders as UserShopOrderSearch;
-
 
 /**
- * UserShopOrdersController implements the CRUD actions for UserShopOrders model.
+ * CommentController implements the CRUD actions for Comment model.
  */
-class UserShopOrdersController extends Controller
+class CommentController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,25 +30,22 @@ class UserShopOrdersController extends Controller
     }
 
     /**
-     * Lists all UserShopOrders models.
+     * Lists all Comment models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new UserShopOrderSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Comment::find(),
+        ]);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-       ]);
-        
+        ]);
     }
 
-    
-
     /**
-     * Displays a single UserShopOrders model.
+     * Displays a single Comment model.
      * @param string $id
      * @return mixed
      */
@@ -60,17 +57,15 @@ class UserShopOrdersController extends Controller
     }
 
     /**
-     * Creates a new UserShopOrders model.
+     * Creates a new Comment model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new UserShopOrders();
-        
+        $model = new Comment();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-1
-            
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -80,7 +75,7 @@ class UserShopOrdersController extends Controller
     }
 
     /**
-     * Updates an existing UserShopOrders model.
+     * Updates an existing Comment model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param string $id
      * @return mixed
@@ -99,7 +94,7 @@ class UserShopOrdersController extends Controller
     }
 
     /**
-     * Deletes an existing UserShopOrders model.
+     * Deletes an existing Comment model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param string $id
      * @return mixed
@@ -112,15 +107,15 @@ class UserShopOrdersController extends Controller
     }
 
     /**
-     * Finds the UserShopOrders model based on its primary key value.
+     * Finds the Comment model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param string $id
-     * @return UserShopOrders the loaded model
+     * @return Comment the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = UserShopOrders::findOne($id)) !== null) {
+        if (($model = Comment::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

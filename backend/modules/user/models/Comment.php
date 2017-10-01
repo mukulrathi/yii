@@ -1,6 +1,7 @@
 <?php
 
 namespace backend\modules\user\models;
+use yii\behaviors\TimestampBehavior;
 
 use Yii;
 
@@ -9,9 +10,12 @@ use Yii;
  *
  * @property string $id
  * @property string $shop_id
- * @property string $username
+ * @property string $ name
  * @property string $comment
  * @property string $rating 
+ * @property integer $created_at
+* @property integer $updated_at
+* @property string $shop_name
  */
 class Comment extends \yii\db\ActiveRecord
 {
@@ -32,7 +36,7 @@ class Comment extends \yii\db\ActiveRecord
             [['shop_id', 'username', 'comment'], 'required'],
             [['shop_id'], 'integer'],
             [['comment'], 'string'],
-          [['username', 'rating'], 'string', 'max' => 255],
+             [['name', 'rating', 'shop_name'], 'string', 'max' => 255],
         ];
     }
 
@@ -44,9 +48,20 @@ class Comment extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'shop_id' => 'Shop ID',
-            'username' => 'Username',
+            'name' => 'Name',
             'comment' => 'Comment',
-              'rating' => 'Rating', 
+            'rating' => 'Rating',
+           'created_at' => 'Created At',
+           'updated_at' => 'Updated At',
+           'shop_name' => 'Shop Name', 
         ];
     }
+
+     public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
+
 }

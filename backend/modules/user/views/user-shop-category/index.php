@@ -9,17 +9,19 @@ use yii\grid\GridView;
 $this->title = 'User Shop Categories';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="box box-default">
-<div class="user-shop-category-index">
 
+<div class="user-Events-index">
 
-    <div class="box-header with-border">
-        <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
-    </div>
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
+            <div class="pull-right">
+                <a href="<?= \yii\helpers\Url::to(['create'], true)?>" class="btn btn-success btn-xs"><i class="fa fa-plus" aria-hidden="true"></i> Shop category_name</a>
+            </div>
+        </div>
+        <div class="box-body">
 
-    <p>
-        <?= Html::a('Create User Shop Category', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+            
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel'  =>$searchModel,
@@ -28,9 +30,24 @@ $this->params['breadcrumbs'][] = $this->title;
 
            
             'category_name',
-            'status',
+              [
+                'label' =>'status',
+                 'attribute'=>'status',
+                 'value'=>function($model)
+                 {
+                    if($model->status ='1')
+                    {
+                        return 'Active';
+                    }
+                    else
+                    {
+                        return 'Inactive' ;
+                    }
+                 }
 
-            ['class' => 'yii\grid\ActionColumn',
+                ],
+
+                 ['class' => 'yii\grid\ActionColumn',
                 'buttons' => [
                     'view' => function ($url, $model, $key) {
                         return Html::a('<i class="fa fa-eye" aria-hidden="true"></i>', $url, ['class' => 'btn btn-primary btn-xs', 'title' => 'View']);
@@ -48,5 +65,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]); ?>
+</div>
 </div>
 </div>

@@ -7,6 +7,8 @@
  */
 use himiklab\thumbnail\EasyThumbnailImage;
 use yii\helpers\Url;
+use kartik\rating\StarRating;
+
 
 ?>
 
@@ -23,7 +25,27 @@ use yii\helpers\Url;
         <div class="caption">
             <h4>Praesent commodo</h4>
             <p>Nullam Condimentum Nibh Etiam Sem</p>
-            <a class="btn btn-mini" href="#">» Read More</a>
+                 <a href=<?php echo Url::to(['/site/view-shop','id'=>$model->id]) ?>>Read More</a>
+          <?php
+        $sum = \backend\modules\user\models\Comment::find()->where(['shop_id' => $model->id])->sum('rating');
+                            $count = \backend\modules\user\models\Comment::find()->where(['shop_id' => $model->id])->count();
+                            $rate = ($count == 0) ? 0 : $sum / ($count);
+                            echo StarRating::widget([
+                                'name' => 'rating_2',
+                                'value' => $rate,
+                                'disabled' => false,
+                               'pluginOptions' => [
+                                    'displayOnly' => true,
+                                  'theme' => 'krajee-uni',
+                                    'filledStar' => '&#x2605;',
+                                    'emptyStar' => '&#x2606',
+                                      'size' => 'xs',                            
+                              ],
+                                 ]);
+                             
+              
+        ?>
+  
         </div>
     </div>
 </li>

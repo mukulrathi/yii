@@ -36,8 +36,10 @@
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     ['label' => 'View Users','icon' => 'user', 'url' => ['/user/default/index']],
                     ['label' => 'View Shops', 'url' => ['/user/user-shop/index']],
-                    ['label' => 'Shops order', 'url' => ['/user/user-shop-orders/index']],
+                    ['label' => 'Shops offers', 'url' => ['/user/user-shop-orders/index']],
                     ['label' => 'Shops Category', 'url' => ['/user/user-shop-category/index']],
+                    ['label' => 'Shop Comments', 'url' => ['/user/comment/']],
+
 
 
 

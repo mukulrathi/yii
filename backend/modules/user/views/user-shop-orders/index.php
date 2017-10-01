@@ -6,28 +6,27 @@ use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'User Shop Orders';
+$this->title = 'User Shop Offers';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="box box-default">
 
-<div class="user-shop-orders-index">
+<div class="user-Events-index">
 
-    <div class="box-header with-border">
-        <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
-    </div>
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
+            <div class="pull-right">
+                <a href="<?= \yii\helpers\Url::to(['create'], true)?>" class="btn btn-success btn-xs"><i class="fa fa-plus" aria-hidden="true"></i> Shop offers</a>
+            </div>
+        </div>
+        <div class="box-body">
 
-    <p>
-        <?= Html::a('Create User Shop Orders', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-<?php Pjax::begin(); ?>    <?= GridView::widget([
+            <?php Pjax::begin(); ?>    <?= GridView::widget([
         'dataProvider' => $dataProvider,
              'filterModel' => $searchModel,
         
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             [
               'label'=>'Shop name',
                'attribute'=>'shop.shop_name',
@@ -53,4 +52,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 <?php Pjax::end(); ?></div>
+</div>
 </div>

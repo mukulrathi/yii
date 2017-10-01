@@ -20,7 +20,7 @@ class ShopListing extends \yii\base\Widget
     {
         $model = new UserShop();
         $dataProvider = new ActiveDataProvider([
-            'query' => UserShop::find()->orderBy('created_at DESC'),
+            'query' => UserShop::find()->where(['status' =>'1'])->orderBy('created_at DESC'),
             'pagination' => [
                 'pageSize' => 10,
             ],

@@ -9,31 +9,34 @@ use yii\grid\GridView;
 $this->title = 'User Details';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="box box-default">
-<div class="user-index">
 
-    <div class="box-header with-border">
-        <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
-    </div>
+<div class="user-Events-index">
 
-    <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
+            <div class="pull-right">
+                <a href="<?= \yii\helpers\Url::to(['create'], true)?>" class="btn btn-success btn-xs"><i class="fa fa-plus" aria-hidden="true"></i> Add New users</a>
+            </div>
+        </div>
+        <div class="box-body">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+         'layout' => '<div class="text-right">{summary}</div>{items}<div class="text-center">{pager}</div>',
+      
         'filterModel'  =>$searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'username',
+         'username',
             // 'auth_key',
             // 'password_hash',
             // 'password_reset_token',
            'email:email',
             //   'status',
-            // 'created_at',
-            // 'updated_at',
+            'created_at:date',
+             'updated_at:date',
+        
 
             [
                 'class' => 'yii\grid\ActionColumn',
@@ -55,3 +58,5 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 </div>
 </div>
+</div>
+

@@ -24,7 +24,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
             'shop_name',
              [
             'label' => 'address',
@@ -42,6 +41,23 @@ $this->params['breadcrumbs'][] = $this->title;
              ['label' => 'ownerName',
             'attribute' => 'user.userProfile.first_name'
              ],
+             [
+                    'label' =>'Status',
+                    'attribute' =>'status',
+                      'value'=>function($model)
+                 {
+                    if($model->status ='1')
+                    {
+                        return 'Active';
+                    }
+                    else
+                    {
+                        return 'Inactive' ;
+                    }
+                 }
+
+             ],
+
                    
        
 

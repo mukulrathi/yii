@@ -148,6 +148,7 @@ use kartik\rating\StarRating;
   border-bottom: 2px solid white;
   overflow-y: scroll;
   height:auto;
+  max-height: 250px
 }
 .chat .chat-history .message-data {
   margin-bottom: 15px;
@@ -315,13 +316,13 @@ li{
                 'userLocations' => [
                     [
                         'location' => [
-                            'address' => $model->userShopAddress->address,
-                            'city' => $model->userShopAddress->city,
-                            'state' => $model->userShopAddress->state,
-                            'postal_code' => $model->userShopAddress->postal_code,
+                            'address' => isset($model->userShopAddress->address)?$model->userShopAddress->address:'',
+                            'city' => isset($model->userShopAddress->city)?$model->userShopAddress->city:'',
+                            'state' => isset($model->userShopAddress->state)?$model->userShopAddress->state:'',
+                            'postal_code' => isset($model->userShopAddress->postal_code)?$model->userShopAddress->postal_code:'',
 
 
-                            'country' => $model->userShopAddress->country,
+                            'country' => isset($model->userShopAddress->country)?$model->userShopAddress->country:'',
                         ],
                         'htmlContent' => '<h1>' . $model->shop_name . '</h1>',
                     ],
@@ -351,10 +352,10 @@ li{
 
                     <address>
                         <h4>Address:</h4>
-                        <h5><?= $model->userShopAddress->address; ?> <br/>
-                            <?= $model->userShopAddress->city; ?><br>
-                            <?= $model->userShopAddress->postal_code; ?><br>
-                            <?= $model->userShopAddress->state; ?>
+                        <h5><?= isset($model->userShopAddress->address)?$model->userShopAddress->address:''; ?> <br/>
+                            <?= isset($model->userShopAddress->city)?$model->userShopAddress->city:''; ?><br>
+                            <?= isset($model->userShopAddress->state)?$model->userShopAddress->state:''; ?><br>
+                            <?= isset($model->userShopAddress->postal_code)?$model->userShopAddress->postal_code:''; ?>
                         </h5>
                     </address>
                 </div>
@@ -368,7 +369,7 @@ li{
                     </div>
                     <div class="contact-details">
                         <h4> Contact No:</h4>
-                        <h5><?= $model->user->userProfile->mobile ?></h5>
+                        <h5><?= isset($model->user->userProfile->mobile)? $model->user->userProfile->mobile:''; ?></h5>
                     </div>
                 </div>
             </div>
@@ -380,7 +381,7 @@ li{
                     </div>
                     <div class="mail-info">
                         <h4>Email Address:</h4>
-                        <h5><?= $model->user->email; ?></h5>
+                        <h5><?= isset($model->user->email)? $model->user->email:''; ?></h5>
                     </div>
                 </div>
             </div>
@@ -388,6 +389,7 @@ li{
         </div>
     </section>
 
+<?php Pjax::begin(['id' => 'comment']);?>
 <div id="review-grid-container">
  <div class="container-chat clearfix">
     <div class="chat">
@@ -397,20 +399,7 @@ li{
 
             $modelc = \backend\modules\user\models\Comment::find()->where(['shop_id' =>$model->id])->all();
                $sum = \backend\modules\user\models\Comment::find()->where(['shop_id' => $model->id])->sum('rating');
-                            $count = \backend\modules\user\models\Comment::find()->where(['shop_id' => $model->id])->count();
-                            $rate = ($count == 0) ? 0 : $sum / ($count);
-                            echo StarRating::widget([
-                                'name' => 'rating_2',
-                                'value' => $rate,
-                                'disabled' => false,
-                                'pluginOptions' => [
-                                    'displayOnly' => true,
-                                    'filledStar' => '<i class="fa fa-star"></i>',
-                                    'emptyStar' => '<i class="fa fa-star-o"></i>',
-                                    'size' => 'xs',
-                                ]
-                            ]);
-                             
+
                 if(!empty($modelc)) {
                     ?>
                     <?php
@@ -418,10 +407,28 @@ li{
                         <li class="clearfix">
                             <div class="message-data align-right">
                                 <span class="message-data-time">10:10 AM, Today</span> &nbsp; &nbsp;
-                                <span class="message-data-name">Olia</span> <i class="fa fa-circle me"></i>
+                                <span class="message-data-name"><?= $key->name ?></span> <i class="fa fa-circle me"></i>
+                                <span>
+                                  <?php 
+                            echo StarRating::widget([
+                                'name' => 'rating_2',
+                                'value' => $key->rating,
+                                'disabled' => false,
+                                'pluginOptions' => [
+                                    'displayOnly' => true,
+                                  'theme' => 'krajee-uni',
+                                    'filledStar' => '&#x2605;',
+                                    'emptyStar' => '&#x2606',
+                                      'size' => 'xs',                            
+                                    
+                                                            ]
+                            ]);
+                            ?>
+                     
+                                </span>
                             </div>
                             <div class="message other-message float-right">
-                                Hi Vincent, how are you? How is the project coming along?
+                               <?= $key->comment ?>
                             </div>
                         </li>
                     <?php }
@@ -433,6 +440,7 @@ li{
       </div>
   </div>
 </div>
+<?php Pjax::end() ?>
 </div>
 
      <li class="write-new">
@@ -443,24 +451,26 @@ li{
 
         ?>
 
-        <?= $form->field($comment, 'username')->textInput() ?>
+        <?= $form->field($comment, 'name')->textInput() ?>
 
         <?= $form->field($comment, 'comment')->textArea() ?>
+        <?= $form->field($comment,'shop_name')->hiddenInput(['value'=>$model->shop_name])->label(false);?>
         <?php
         $pluginOptions = [
-        'theme' => 'krajee-fa',
-        'filledStar' => '<i class="fa fa-star" aria-hidden="true"></i>',
-        'emptyStar' => '<i class="fa fa-star-o" aria-hidden="true"></i>',
-        'step' => 0.5,
+      'theme' => 'krajee-uni',
+        'filledStar' => '&#x2605;',
+        'emptyStar' => '&#x2606',
+        
+          'step' => 0.5,
         'size' => 'xs',
-        'showCaption' => true,
-        'showClear' => true
+        'showCaption' => false,
+        'showClear' => false
     ];
 
     echo $form->field($comment, 'rating')->widget(StarRating::classname(), [
         'name' => 'rating_21',
         'pluginOptions' => $pluginOptions
-    ]);
+    ])->label(false);
     ?>
 
         <div class="form-group">
@@ -486,7 +496,7 @@ $(document).on("beforeSubmit", '#form-review-rating', function () {
         type: 'post',
         success: function(response) {
             if(response.flag) {
-         //       $.pjax.reload({container:"#review-grid-container", async:false});
+                $.pjax.reload({container:"#comment"});
             $('#form-review-rating')[0].reset();
                 $.notify("Comment Published", "success");
             } else {

@@ -91,13 +91,13 @@ use dosamigos\tinymce\TinyMce;
             <?php $usershopcategory =  UserShopCategory::find()->where(['status'=>1])->all();
             $category = yii\helpers\ArrayHelper::map($usershopcategory,'id','category_name');
             ?>
-            <?= $form->field($modelUserShop, 'shop_category_id')->dropdownList($category,['prompt'=>'Select the shop category']); ?>
+            <?= $form->field($modelUserShop, 'shop_category_id')->dropdownList($category,['prompt'=>'Select the shop category'])->label('Shop Category'); ?>
 
         </div>
 
         <div class="col-sm-4">
             <?php $status = array('0'=>'Disabled','1'=>'Enabled');?>
-            <?= $form->field($model, 'status')->dropdownList($status,['prompt'=>' Select the status']); ?>
+            <?= $form->field($modelUserShop, 'status')->dropdownList($status,['prompt'=>' Select the status']); ?>
         </div>
     </div>
 

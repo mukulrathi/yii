@@ -24,7 +24,7 @@ use kartik\file\FileInput;
           $category = yii\helpers\ArrayHelper::map($usershopcategory,'id','category_name');
           ?>
 
-          <?= $form->field($model, 'shop_category_id')->dropdownList($category,['prompt'=>'Select the shop category']); ?>
+          <?= $form->field($model, 'shop_category_id')->dropdownList($category,['prompt'=>'Select the shop category'])->label('Shop category'); ?>
 
       </div>
       <div class="col-sm-4">
@@ -84,7 +84,13 @@ use kartik\file\FileInput;
 
         </div>
     </div>
-
+<div class="row">  
+    <div class="col-sm-12">
+            <?php $status = array('0'=>'Disabled','1'=>'Enabled');?>
+            <?= $form->field($model, 'status')->dropdownList($status,['prompt'=>' Select the status']); ?>
+        </div>
+  
+</div>
     <div class="row">
     <div class="col-sm-12">
             <?= $form->field($model, 'deescription')->widget(TinyMce::className(), [

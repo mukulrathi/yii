@@ -183,7 +183,8 @@ class SiteController extends Controller
     public function actionViewShop($id)
     {
         $comment = new Comment();
-        $model = UserShop::find()->where(['id' => $id])->one();
+
+        $model = $this->findmodel($id);
         return $this->render('details', [
             'model' => $model,
             'comment' =>$comment
@@ -294,4 +295,14 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+        protected function findModel($id)
+    {
+        if (($model = UserShop::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
 }
