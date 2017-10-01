@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use kartik\file\FileInput;
 use backend\modules\user\models\UserShopCategory;
 use dosamigos\tinymce\TinyMce;
+use kartik\time\TimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model backend\modules\user\models\User */
@@ -42,11 +43,16 @@ use dosamigos\tinymce\TinyMce;
 
       </div>
      <div class ="col-sm-4">
-       <?= $form->field($modelUserShop, 'start_time')->textInput(['maxlength' => true]) ?>
-     </div>
+          <?= $form->field($modelUserShop, 'start_time')->widget(TimePicker::classname(), [
+              'name' => 'start_time'
+              ])
+            ?>     </div>
      <div class ="col-sm-4">
-       <?= $form->field($modelUserShop, 'end_time')->textInput(['maxlength' => true]) ?>
-     </div>
+           <?= $form->field($modelUserShop, 'end_time')->widget(TimePicker::classname(), [
+              'name' => 'start_time'
+              ])
+            ?> 
+              </div>
   </div>
     <div class="row">
      <div class ="col-sm-4">
@@ -115,7 +121,7 @@ use dosamigos\tinymce\TinyMce;
                 'initialPreviewAsData' => true,
                 'removeClass' => 'btn btn-default rm-file-input',
             ],
-            'maxFileCount' => 4,
+            'maxFileCount' => 25,
             'browseOnZoneClick' => true,
             'showBrowse' => true,
             'allowedFileExtensions'=>['jpg', 'png', 'jpeg']

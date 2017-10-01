@@ -8,6 +8,7 @@
 use himiklab\thumbnail\EasyThumbnailImage;
 use yii\helpers\Url;
 use kartik\rating\StarRating;
+use yii\helpers\StringHelper ;
 ?>
 
 <div class="shop-container">
@@ -24,12 +25,8 @@ use kartik\rating\StarRating;
     </div>
     <div class="shop-title">
         <h3><strong><?= $model->shop_name ?></strong></h3>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+        <h4> <?= StringHelper::truncate($model->deescription,70,'', 'UTF-8', true);  ?></h4>
+       </h4>
         <div class="read-info">
             <a href=<?php echo Url::to(['/site/view-shop','id'=>$model->id]) ?>>Read More</a>
         </div>

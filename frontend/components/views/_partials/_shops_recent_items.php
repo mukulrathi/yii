@@ -8,6 +8,7 @@
 use himiklab\thumbnail\EasyThumbnailImage;
 use yii\helpers\Url;
 use kartik\rating\StarRating;
+use yii\helpers\StringHelper ;
 
 
 ?>
@@ -23,9 +24,9 @@ use kartik\rating\StarRating;
 
         </div>
         <div class="caption">
-            <h4>Praesent commodo</h4>
-            <p>Nullam Condimentum Nibh Etiam Sem</p>
-                 <a href=<?php echo Url::to(['/site/view-shop','id'=>$model->id]) ?>>Read More</a>
+            <h4><?= $model->shop_name ?></h4>
+          <p> <?= StringHelper::truncate($model->deescription,70,'', 'UTF-8', true);  ?></p>
+                <a href=<?php echo Url::to(['/site/view-shop','id'=>$model->id]) ?>>Read More</a>
           <?php
         $sum = \backend\modules\user\models\Comment::find()->where(['shop_id' => $model->id])->sum('rating');
                             $count = \backend\modules\user\models\Comment::find()->where(['shop_id' => $model->id])->count();

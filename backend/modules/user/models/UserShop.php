@@ -11,12 +11,11 @@ use Yii;
  * @property integer $user_id
  * @property string $shop_name
  * @property integer $shop_category_id
- * @property integer $start_time
- * @property integer $end_time
- * @property integer $created_at
- * @property integer $updated_at
- * @property string $deescription
- * @property User $user
+ * @property string $start_time
+* @property string $end_time
+* @property integer $status
+* @property string $deescription
+* @property User $user
 * @property integer $status
  * @property UserShopAddress $userShopAddress
  * @property UserShopOrders[] $userShopOrders
@@ -40,10 +39,10 @@ class UserShop extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [[ 'shop_name', 'shop_category_id', 'start_time', 'end_time','status'], 'required'],
-            [['user_id', 'shop_category_id', 'start_time', 'end_time','status', 'created_at', 'updated_at'], 'integer'],
-            [['shop_name'], 'string', 'max' => 255],
-            [['deescription'], 'string'],
+           [['user_id', 'shop_category_id', 'status', 'created_at', 'updated_at'], 'integer'],
+             [['user_id', 'shop_category_id','status', 'created_at', 'updated_at'], 'integer'],
+              [['shop_name', 'start_time', 'end_time'], 'string', 'max' => 255], 
+                 [['deescription'], 'string'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
