@@ -69,9 +69,7 @@ class UserShopOrdersController extends Controller
         $model = new UserShopOrders();
         
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-1
-            
-            return $this->redirect(['view', 'id' => $model->id]);
+                return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,

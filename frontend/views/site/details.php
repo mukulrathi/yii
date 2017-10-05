@@ -9,7 +9,8 @@ use yii\widgets\Pjax;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\rating\StarRating;
-
+use himiklab\thumbnail\EasyThumbnailImage;
+use backend\modules\user\models\UserShopFileMapping;
 
 ?>
 <style>
@@ -271,6 +272,15 @@ li{
     <!-- start slider section -->
     <section id="" class="shop-entry">
         <div class="shop-entry-detail">
+
+                              <?php
+                                 $shop_image = UserShopFileMapping::find()->where(['shop_id'=> $model->id])->one();
+                                 if(isset($shop_image->file->path))
+                                 {
+                            echo EasyThumbnailImage::thumbnailImg($shop_image->file->path,2069.5,540, EasyThumbnailImage::THUMBNAIL_OUTBOUND);
+                              }
+                              ?>
+
             <h1><?= $model->shop_name ?></h1>
             <div class="divider-header"></div>
         </div>
